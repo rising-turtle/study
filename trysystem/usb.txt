@@ -1,0 +1,10 @@
+[ 7799.211813] usb-storage: waiting for device to settle before scanning
+[ 7804.217329] usb-storage: device scan complete
+[ 7843.169589] usb 1-1: USB disconnect, address 4
+[ 8250.609570] usb 2-1: new full speed USB device using uhci_hcd and address 3
+[ 8250.804210] usb 2-1: configuration #1 chosen from 1 choice
+[ 8251.302939] usbcore: registered new interface driver usbserial
+[ 8251.303581] usbcore: registered new interface driver usbserial_generic
+[ 8251.303602] usbserial: USB Serial Driver core
+[ 8251.385635] usb 2-1: pl2303 converter now attached to ttyUSB0
+[ 8251.385801] usbcore: registered new interface driver pl2303

@@ -1,0 +1,36 @@
+SET(QT_USE_QTOPENGL TRUE)
+SET(QT_USE_QT3SUPPORT TRUE)
+ADD_DEFINITIONS(-DDEBUG)
+ADD_DEFINITIONS("-g")
+INCLUDE(${QT_USE_FILE})
+INCLUDE_DIRECTORIES(${INTELMAP_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR} ${QT_QTOPENGL_INCLUDE_DIR})
+SET(LINKS 
+	glut
+	GLU
+	GL
+)
+SET(INTELMAP_SRCS
+	main.cpp
+	points.cpp
+	gen_points.cpp
+	map2d.cpp
+	line.cpp
+	point2d.cpp
+	main_window.cpp
+	graphics.cpp
+	imagemap.cpp
+)
+
+SET(INTELMAP_MOC_HDRS
+	points.h
+	gen_points.h
+	map2d.h
+	main_window.h
+	graphics.h
+	imagemap.h
+)
+
+
+QT4_WRAP_CPP(INTELMAP_MOC_SRCS ${INTELMAP_MOC_HDRS})
+ADD_EXECUTABLE(test ${INTELMAP_SRCS} ${INTELMAP_MOC_SRCS})
+TARGET_LINK_LIBRARIES(test ${QT_LIBRARIES} ${LINKS})

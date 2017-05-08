@@ -1,0 +1,378 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADDITIONAL_X_SIZE	map2d.h	29;"	d
+ADDITIONAL_Y_SIZE	map2d.h	30;"	d
+APRX	match-map.c	124;"	d	file:
+Actions	gui.h	/^    QGroupBox* Actions;$/;"	m	class:MapGUI
+BOX_ADD_SIZE	map2d.c	133;"	d	file:
+BOX_MAX_SIZE	map2d.c	132;"	d	file:
+CMRT_MAP2D_MESSAGES_H	mapper_messages.h	2;"	d
+CenterRobot	gui.h	/^    QPushButton* CenterRobot;$/;"	m	class:MapGUI
+CenterRobotSlot	gui.ui.h	/^void MapGUI::CenterRobotSlot()$/;"	f	class:MapGUI
+ChangeMapAction	gui.h	/^    QAction* ChangeMapAction;$/;"	m	class:MapGUI
+ChangeMapSlot	gui.ui.h	/^void MapGUI::ChangeMapSlot()$/;"	f	class:MapGUI
+ClearMap	gui.h	/^    QPushButton* ClearMap;$/;"	m	class:MapGUI
+ClearMapSlot	gui.ui.h	/^void MapGUI::ClearMapSlot( bool )$/;"	f	class:MapGUI
+ClearMapSlot	gui.ui.h	/^void MapGUI::ClearMapSlot()$/;"	f	class:MapGUI
+EPSILON	map2d.h	19;"	d
+Frame3_2	gui.h	/^    QFrame* Frame3_2;$/;"	m	class:MapGUI
+Frame3_2_2	gui.h	/^    QFrame* Frame3_2_2;$/;"	m	class:MapGUI
+GAUSS_NOISE	map2d.h	22;"	d
+GLOBAL_MAP	map2d.h	37;"	d
+GUI_FILES	Makefile	/^GUI_FILES = 		.\/gui.h .\/gui-moc.cpp .\/gui.cpp .\/mapview-moc.cpp $/;"	m
+GlobalMapType	gui.h	/^    QPushButton* GlobalMapType;$/;"	m	class:MapGUI
+GlobalMapTypeSlot	gui.ui.h	/^void MapGUI::GlobalMapTypeSlot()$/;"	f	class:MapGUI
+LASER_TYPE	map2d.h	/^enum LASER_TYPE         { PLS, LMS };$/;"	g
+LMS	map2d.h	/^enum LASER_TYPE         { PLS, LMS };$/;"	e	enum:LASER_TYPE
+LOCAL_MAP	map2d.h	38;"	d
+LOCAL_MAP_OBSTACLE_PROB	map2d.h	25;"	d
+Layout3	gui.h	/^    QVBoxLayout* Layout3;$/;"	m	class:MapGUI
+Layout5	gui.h	/^    QHBoxLayout* Layout5;$/;"	m	class:MapGUI
+LocalMapType	gui.h	/^    QPushButton* LocalMapType;$/;"	m	class:MapGUI
+LocalMapTypeSlot	gui.ui.h	/^void MapGUI::LocalMapTypeSlot()$/;"	f	class:MapGUI
+MAN_PAGES	Makefile	/^MAN_PAGES = $/;"	m
+MAP2	map2d.h	/^} MAP2;$/;"	t	typeref:struct:__anon4
+MAP2D_H	map2d.h	2;"	d
+MAP2D_SETTINGS	map2d.h	/^} MAP2D_SETTINGS;$/;"	t	typeref:struct:__anon5
+MAPGUI_H	gui.h	10;"	d
+MAPPING_MODE	mapper_messages.h	9;"	d
+MAPVIEW_H	mapview.h	12;"	d
+MAP_SIZE_STEP	write-map.c	4;"	d	file:
+MAX_COMMAND_LENGTH	read-ini.c	99;"	d	file:
+MAX_LINE_LENGTH	map2d.h	24;"	d
+MAX_NAME_LENGTH	map2d.h	18;"	d
+MAX_NUM_LASER_BEAMS	map2d.h	31;"	d
+MAX_NUM_LASER_VALUES	map2d.h	21;"	d
+MINIMUM_MAP_SIZE	write-map.c	3;"	d	file:
+MINMAX2_VALUES	global-map.c	/^} MINMAX2_VALUES;$/;"	t	typeref:struct:__anon1	file:
+MIN_VEL	map2d.c	135;"	d	file:
+MODES	map2d.h	/^enum MODES         { ONLINE, READ_FILE };$/;"	g
+MODULE_COMMENT	Makefile	/^MODULE_COMMENT = "Grid based Scan Matcher by D. Haehnel"$/;"	m
+MODULE_NAME	Makefile	/^MODULE_NAME = "SCAN_MATCHER"$/;"	m
+Map	gui.h	/^    MapView* Map;$/;"	m	class:MapGUI
+MapGUI	gui.cpp	/^MapGUI::MapGUI( QWidget* parent, const char* name, WFlags fl )$/;"	f	class:MapGUI
+MapGUI	gui.h	/^class MapGUI : public QMainWindow$/;"	c
+MapGUILayout	gui.h	/^    QHBoxLayout* MapGUILayout;$/;"	m	class:MapGUI
+MapView	mapview.cpp	/^MapView::MapView( QWidget* parent, const char * )$/;"	f	class:MapView
+MapView	mapview.h	/^class MapView : public QScrollView {$/;"	c
+MenuExitSlot	gui.ui.h	/^void MapGUI::MenuExitSlot()$/;"	f	class:MapGUI
+MenuNewSlot	gui.ui.h	/^void MapGUI::MenuNewSlot()$/;"	f	class:MapGUI
+MenuOpenSlot	gui.ui.h	/^void MapGUI::MenuOpenSlot()$/;"	f	class:MapGUI
+MenuPrintSlot	gui.ui.h	/^void MapGUI::MenuPrintSlot()$/;"	f	class:MapGUI
+NAVIGATION_MAPPER_SET_MODE_FMT	mapper_messages.h	19;"	d
+NAVIGATION_MAPPER_SET_MODE_NAME	mapper_messages.h	17;"	d
+NAVIGATION_MAPPER_STATUS_FMT	mapper_messages.h	35;"	d
+NAVIGATION_MAPPER_STATUS_NAME	mapper_messages.h	33;"	d
+ODO_LAST	map2d.h	35;"	d
+ODO_NOTHING	map2d.h	33;"	d
+ODO_STD	map2d.h	34;"	d
+ONLINE	map2d.h	/^enum MODES         { ONLINE, READ_FILE };$/;"	e	enum:MODES
+ONLINE_LASER_DATA	map2d.h	/^} ONLINE_LASER_DATA;$/;"	t	typeref:struct:__anon6
+PLS	map2d.h	/^enum LASER_TYPE         { PLS, LMS };$/;"	e	enum:LASER_TYPE
+PUBLIC_BINARIES	Makefile	/^PUBLIC_BINARIES = $/;"	m
+PUBLIC_INCLUDES	Makefile	/^PUBLIC_INCLUDES = $/;"	m
+PUBLIC_LIBRARIES	Makefile	/^PUBLIC_LIBRARIES = $/;"	m
+QT3_DIR	Makefile	/^QT3_DIR = \/usr\/lib\/qt3$/;"	m
+QT_NO_COMPAT	gui-moc.cpp	10;"	d	file:
+QT_NO_COMPAT	mapview-moc.cpp	10;"	d	file:
+QUAD_TREE	map2d.h	/^typedef struct QUAD_TREE {$/;"	s
+QUAD_TREE	map2d.h	/^} QUAD_TREE;$/;"	t	typeref:struct:QUAD_TREE
+READ_FILE	map2d.h	/^enum MODES         { ONLINE, READ_FILE };$/;"	e	enum:MODES
+REC2_MOVEMENTS	map2d.h	/^} REC2_MOVEMENTS;$/;"	t	typeref:struct:__anon2
+REGISTRATION_MODE	mapper_messages.h	8;"	d
+SHOW_RAYS	map2d.h	39;"	d
+SOURCES	Makefile	/^SOURCES =		line.c map.c read-ini.c match-map.c global-map.c \\$/;"	m
+ShowBeamsType	gui.h	/^    QPushButton* ShowBeamsType;$/;"	m	class:MapGUI
+ShowBeamsTypeSlot	gui.ui.h	/^void MapGUI::ShowBeamsTypeSlot()$/;"	f	class:MapGUI
+TARGETS	Makefile	/^TARGETS = 		ml-mapper$/;"	m
+TIME_HIST	map2d.c	134;"	d	file:
+UPDATE_TCX_LOOP	map2d.h	41;"	d
+UPDT_NOT	map2d.h	61;"	d
+UPDT_X	map2d.h	62;"	d
+UPDT_Y	map2d.h	63;"	d
+UpdateMap	gui.h	/^    QPushButton* UpdateMap;$/;"	m	class:MapGUI
+UpdateMapSlot	gui.ui.h	/^void MapGUI::UpdateMapSlot()$/;"	f	class:MapGUI
+ViewPathAction	gui.h	/^    QAction* ViewPathAction;$/;"	m	class:MapGUI
+ViewPathSlot	gui.ui.h	/^void MapGUI::ViewPathSlot()$/;"	f	class:MapGUI
+abort_signal	run_online.c	/^abort_signal( int sig )$/;"	f
+add_noise	map2d.c	/^add_noise( logtools_log_data_t * rec, REC2_MOVEMENTS orig, int laserID )$/;"	f
+add_noise	map2d.h	/^  int                   add_noise;$/;"	m	struct:__anon5
+add_noise_val	map2d.h	/^  double                add_noise_val;$/;"	m	struct:__anon5
+alloc_online_structures	run_online.c	/^alloc_online_structures( ONLINE_LASER_DATA * data, REC2_MOVEMENTS * movements )$/;"	f
+alloc_tree	map.c	/^alloc_tree( QUAD_TREE * tree, int level, logtools_svector2_t center, short stepsize )$/;"	f
+apex_angle	ipc.c	/^apex_angle( int num )$/;"	f
+app_process_events	main.cpp	/^app_process_events( void )$/;"	f
+beam_factor	mapview.cpp	/^double beam_factor = 5.0;$/;"	v
+calc	map2d.h	/^  float                ** calc;$/;"	m	struct:__anon4
+center	map2d.h	/^  logtools_svector2_t center;$/;"	m	struct:QUAD_TREE
+center	map2d.h	/^  logtools_vector2_t      center;$/;"	m	struct:__anon4
+centerRobot	mapview.cpp	/^MapView::centerRobot( void )$/;"	f	class:MapView
+center_robot	main.cpp	/^center_robot( void )$/;"	f
+change_map	map2d.h	/^  int                   change_map;$/;"	m	struct:__anon5
+change_map	run_online.c	/^int                       change_map = TRUE;$/;"	v
+check_settings	read-ini.c	/^check_settings( void )$/;"	f
+className	gui-moc.cpp	/^const char *MapGUI::className() const$/;"	f	class:MapGUI
+className	mapview-moc.cpp	/^const char *MapView::className() const$/;"	f	class:MapView
+clearMap	mapview.cpp	/^MapView::clearMap( void )$/;"	f	class:MapView
+clear_global_map	global-map.c	/^clear_global_map( MAP2 *map )$/;"	f
+clear_local_treemap	map.c	/^clear_local_treemap( QUAD_TREE *tree, MAP2 *map, int hk )$/;"	f
+close_output_files	write-map.c	/^close_output_files( void )$/;"	f
+compute_beam_log_prob	match-map.c	/^compute_beam_log_prob( double expected, double measured )$/;"	f
+compute_laser2d_bbox	map2d.c	/^compute_laser2d_bbox( logtools_lasersens2_data_t *lsens )$/;"	f
+compute_laser2d_points	map2d.c	/^compute_laser2d_points( logtools_log_data_t *rec, int laserID )$/;"	f
+compute_map_pos_from_rpos	map.c	/^compute_map_pos_from_rpos( logtools_rpos2_t rpos, MAP2 *map,$/;"	f
+compute_map_pos_from_vec2	map.c	/^compute_map_pos_from_vec2( logtools_vector2_t pos, MAP2 *map,$/;"	f
+compute_map_probs	write-map.c	/^compute_map_probs( MAP2 * map )$/;"	f
+compute_prob_point	map.c	/^compute_prob_point( MAP2 *map, int x, int y )$/;"	f
+compute_prob_treemap	map.c	/^compute_prob_treemap( QUAD_TREE *tree, MAP2 *map )$/;"	f
+compute_probs_of_global_map	map.c	/^compute_probs_of_global_map( MAP2 * global_map )$/;"	f
+compute_rel_coord2_with_offset	map2d.c	/^compute_rel_coord2_with_offset( logtools_lasersens2_data_t lsens, int i,$/;"	f
+compute_rmap_pos_from_vec2	match-map.c	/^compute_rmap_pos_from_vec2( logtools_vector2_t vec, MAP2 map, logtools_ivector2_t *v )$/;"	f
+compute_test_move	match-map.c	/^compute_test_move( logtools_rmove2_t smove, int nummove, int stepsize )$/;"	f
+convolve_calc_point	map.c	/^convolve_calc_point( MAP2 *map, logtools_gauss_kernel_t kernel, int hk,$/;"	f
+convolve_calc_treemap	map.c	/^convolve_calc_treemap( QUAD_TREE *tree, MAP2 *map,$/;"	f
+convolve_map	map.c	/^convolve_map( MAP2 *map )$/;"	f
+convolve_prob_point	map.c	/^convolve_prob_point( MAP2 *map, logtools_gauss_kernel_t kernel,$/;"	f
+convolve_prob_treemap	map.c	/^convolve_prob_treemap( QUAD_TREE *tree, MAP2 *map,$/;"	f
+corr_theta	mapper_messages.h	/^  double  corr_theta;$/;"	m	struct:__anon8
+corr_x	mapper_messages.h	/^  double  corr_x;$/;"	m	struct:__anon8
+corr_y	mapper_messages.h	/^  double  corr_y;$/;"	m	struct:__anon8
+create_local_map	map.c	/^create_local_map( MAP2 *map, logtools_lasersens2_data_t data,$/;"	f
+create_output_files	write-map.c	/^create_output_files( void )$/;"	f
+current_movement	run_online.c	/^logtools_rmove2_t            * current_movement;$/;"	v
+current_pos	run_online.c	/^logtools_rpos2_t               current_pos = {0.0, 0.0, 0.0};$/;"	v
+current_scan	run_online.c	/^logtools_lasersens2_data_t   * current_scan;$/;"	v
+dataF	map2d.h	/^  FILE                * dataF;$/;"	m	struct:__anon5
+data_filename	map2d.h	/^  char                  data_filename[MAX_NAME_LENGTH];$/;"	m	struct:__anon5
+devNULL	map2d.h	/^  FILE                * devNULL;$/;"	m	struct:__anon5
+display_pixel_robot_size	map2d.h	/^  int                   display_pixel_robot_size;$/;"	m	struct:__anon5
+display_robot_size	map2d.h	/^  double                display_robot_size;$/;"	m	struct:__anon5
+drawContents	mapview.cpp	/^MapView::drawContents( QPainter *p, int cx, int cy, int cw, int ch )$/;"	f	class:MapView
+dumpMapName	mapview.cpp	/^dumpMapName( char * prefix )$/;"	f
+dump_mapnames	map2d.h	/^  char                  dump_mapnames[MAX_NAME_LENGTH];$/;"	m	struct:__anon5
+dump_maps	map2d.h	/^  int                   dump_maps;$/;"	m	struct:__anon5
+elem	map2d.h	/^  struct QUAD_TREE  * elem[4];$/;"	m	struct:QUAD_TREE	typeref:struct:QUAD_TREE::QUAD_TREE
+error	match-map.c	/^error( double val, double expect )$/;"	f
+error_forward_step	map2d.h	/^  double                error_forward_step;$/;"	m	struct:__anon5
+error_max_forward	map2d.h	/^  double                error_max_forward;$/;"	m	struct:__anon5
+error_max_rotation	map2d.h	/^  double                error_max_rotation;$/;"	m	struct:__anon5
+error_max_sideward	map2d.h	/^  double                error_max_sideward;$/;"	m	struct:__anon5
+error_min_distance	map2d.h	/^  double                error_min_distance;$/;"	m	struct:__anon5
+error_rotation_step	map2d.h	/^  double                error_rotation_step;$/;"	m	struct:__anon5
+error_sideward_step	map2d.h	/^  double                error_sideward_step;$/;"	m	struct:__anon5
+fileExitAction	gui.h	/^    QAction* fileExitAction;$/;"	m	class:MapGUI
+fileMenu	gui.h	/^    QPopupMenu *fileMenu;$/;"	m	class:MapGUI
+fileNewAction	gui.h	/^    QAction* fileNewAction;$/;"	m	class:MapGUI
+fileOpenAction	gui.h	/^    QAction* fileOpenAction;$/;"	m	class:MapGUI
+filePrintAction	gui.h	/^    QAction* filePrintAction;$/;"	m	class:MapGUI
+fileSaveAction	gui.h	/^    QAction* fileSaveAction;$/;"	m	class:MapGUI
+fileSaveAsAction	gui.h	/^    QAction* fileSaveAsAction;$/;"	m	class:MapGUI
+find_quadrant	map.c	/^find_quadrant( logtools_svector2_t center, int x, int y )$/;"	f
+fit_data_in_local_map	match-map.c	/^fit_data_in_local_map( MAP2 map, logtools_lasersens2_data_t *data,$/;"	f
+gauss_approx	match-map.c	/^gauss_approx( double val, double expect, double sigma )$/;"	f
+get_map_hit	match-map.c	/^get_map_hit( logtools_ivector2_t pos, MAP2 map )$/;"	f
+get_map_sum	match-map.c	/^get_map_sum( logtools_ivector2_t pos, MAP2 map )$/;"	f
+get_map_val	match-map.c	/^get_map_val( logtools_ivector2_t pos, MAP2 map )$/;"	f
+get_maphit	map.c	/^get_maphit( int pos_x, int pos_y, MAP2 map )$/;"	f
+get_mapsum	map.c	/^get_mapsum( int pos_x, int pos_y, MAP2 map )$/;"	f
+get_mapval	map.c	/^get_mapval( int pos_x, int pos_y, MAP2 map )$/;"	f
+gimage	mapview.h	/^  QImage           * gimage;$/;"	m	class:MapView
+global_map	main.cpp	/^MAP2                       * global_map;$/;"	v
+global_map_filename	map2d.h	/^  char                  global_map_filename[MAX_NAME_LENGTH];$/;"	m	struct:__anon5
+global_map_max_range	map2d.h	/^  double                global_map_max_range;$/;"	m	struct:__anon5
+global_map_ray_model	map2d.h	/^  int                   global_map_ray_model;$/;"	m	struct:__anon5
+global_map_resolution	map2d.h	/^  double                global_map_resolution;$/;"	m	struct:__anon5
+global_map_size_x	map2d.h	/^  int                   global_map_size_x;$/;"	m	struct:__anon5
+global_map_size_y	map2d.h	/^  int                   global_map_size_y;$/;"	m	struct:__anon5
+global_map_start_pos	map2d.h	/^  logtools_rpos2_t      global_map_start_pos;$/;"	m	struct:__anon5
+global_map_start_x	map2d.h	/^  int                   global_map_start_x;$/;"	m	struct:__anon5
+global_map_start_y	map2d.h	/^  int                   global_map_start_y;$/;"	m	struct:__anon5
+global_map_std_val	map2d.h	/^  double                global_map_std_val;$/;"	m	struct:__anon5
+grid_line	line.c	/^grid_line( logtools_ivector2_t start, logtools_ivector2_t end,$/;"	f
+grid_line_core	line.c	/^grid_line_core( logtools_ivector2_t start, logtools_ivector2_t end,$/;"	f
+grimage	mapview.h	/^  QImage           * grimage;$/;"	m	class:MapView
+histcnt	run_file.c	/^int                              histcnt;$/;"	v
+history	run_file.c	/^int                            * history;$/;"	v
+host	mapper_messages.h	/^  char host[10];$/;"	m	struct:__anon7
+host	mapper_messages.h	/^  char host[10];$/;"	m	struct:__anon8
+image0	gui.h	/^    QPixmap image0;$/;"	m	class:MapGUI
+initialize_global_map	global-map.c	/^initialize_global_map( MAP2 *map,  int size_x,  int size_y,$/;"	f
+initialize_map	map.c	/^initialize_map( MAP2 *map, int sx, int sy, int center_x, int center_y,$/;"	f
+initialize_maps	main.cpp	/^initialize_maps( MapGUI * window, MAP2 * local_map, MAP2 * global_map )$/;"	f
+initialize_qtree	map.c	/^initialize_qtree( QUAD_TREE * tree, int size_x, int size_y)$/;"	f
+initialize_ray_map	map.c	/^initialize_ray_map( MAP2 *map, int sx, int sy,$/;"	f
+intersect_bboxes	map2d.c	/^intersect_bboxes( logtools_bounding_box_t box1, logtools_bounding_box_t box2 )$/;"	f
+inuse	map2d.h	/^  unsigned char       inuse;$/;"	m	struct:QUAD_TREE
+ipc_carmen_front_laser_handler	ipc.c	/^ipc_carmen_front_laser_handler( MSG_INSTANCE msgRef, BYTE_ARRAY callData,$/;"	f	file:
+ipc_init	ipc.c	/^ipc_init( int argc, char *argv[] )$/;"	f
+ipc_initialize_messages	ipc.c	/^ipc_initialize_messages( void )$/;"	f
+ipc_odometry_handler	ipc.c	/^ipc_odometry_handler(MSG_INSTANCE msgRef, BYTE_ARRAY callData,$/;"	f	file:
+ipc_stop	ipc.c	/^ipc_stop( void )$/;"	f
+ipc_update	ipc.c	/^ipc_update( void )$/;"	f
+isInBox	map2d.c	/^isInBox( logtools_vector2_t p, logtools_vector2_t ll, logtools_vector2_t ur )$/;"	f
+ivector2_distance	match-map.c	/^ivector2_distance( logtools_ivector2_t p1, logtools_ivector2_t p2 )$/;"	f
+languageChange	gui.cpp	/^void MapGUI::languageChange()$/;"	f	class:MapGUI
+laser2d_bbox	map2d.c	/^laser2d_bbox( int numvalues, float *val, logtools_laser_coord2_t *coord )$/;"	f
+laser_char_type	map2d.h	/^  char                  laser_char_type[MAX_NAME_LENGTH];$/;"	m	struct:__anon5
+laser_direction	map2d.h	/^  int                   laser_direction;$/;"	m	struct:__anon5
+laser_number	map2d.h	/^  int                   laser_number;$/;"	m	struct:__anon5
+laser_type	map2d.h	/^  enum LASER_TYPE       laser_type;$/;"	m	struct:__anon5	typeref:enum:__anon5::LASER_TYPE
+level	map2d.h	/^  unsigned char       level;$/;"	m	struct:QUAD_TREE
+limage	mapview.h	/^  QImage           * limage;$/;"	m	class:MapView
+local_map	main.cpp	/^MAP2                       * local_map;$/;"	v
+local_map_history_skip	map2d.h	/^  int                   local_map_history_skip;$/;"	m	struct:__anon5
+local_map_kernel_len	map2d.h	/^  int                   local_map_kernel_len;$/;"	m	struct:__anon5
+local_map_max_range	map2d.h	/^  double                local_map_max_range;$/;"	m	struct:__anon5
+local_map_max_used_history	map2d.h	/^  int                   local_map_max_used_history;$/;"	m	struct:__anon5
+local_map_min_bbox_distance	map2d.h	/^  double                local_map_min_bbox_distance;$/;"	m	struct:__anon5
+local_map_num_convolve	map2d.h	/^  int                   local_map_num_convolve;$/;"	m	struct:__anon5
+local_map_num_history	map2d.h	/^  int                   local_map_num_history;$/;"	m	struct:__anon5
+local_map_object_prob	map2d.h	/^  double                local_map_object_prob;$/;"	m	struct:__anon5
+local_map_resolution	map2d.h	/^  double                local_map_resolution;$/;"	m	struct:__anon5
+local_map_std_val	map2d.h	/^  double                local_map_std_val;$/;"	m	struct:__anon5
+local_map_use_odometry	map2d.h	/^  int                   local_map_use_odometry;$/;"	m	struct:__anon5
+logF	map2d.h	/^  FILE                * logF;$/;"	m	struct:__anon5
+log_filename	map2d.h	/^  char                  log_filename[MAX_NAME_LENGTH];$/;"	m	struct:__anon5
+log_output	map2d.h	/^  int                   log_output;$/;"	m	struct:__anon5
+logtools_svector2_t	map2d.h	/^} logtools_svector2_t;$/;"	t	typeref:struct:__anon3
+loop	run_online.c	/^int                       loop = TRUE;$/;"	v
+loop_sleep	map2d.h	/^  int                   loop_sleep;$/;"	m	struct:__anon5
+lsens	map2d.h	/^  logtools_lasersens2_data_t * lsens;$/;"	m	struct:__anon6
+main	main.cpp	/^main( int argc, char *argv[] )$/;"	f
+map2d_compute_laser2d_coord	map2d.c	/^map2d_compute_laser2d_coord( logtools_lasersens2_data_t lsens, int i )$/;"	f
+map2d_compute_laser2d_coord_with_offset	map2d.c	/^map2d_compute_laser2d_coord_with_offset( logtools_lasersens2_data_t lsens,$/;"	f
+map2d_compute_laser_abs_point	map2d.c	/^map2d_compute_laser_abs_point( logtools_rpos2_t rpos, double val,$/;"	f
+map_change_settings	map.c	/^map_change_settings( int set )$/;"	f
+map_pos_from_rpos	global-map.c	/^map_pos_from_rpos( logtools_rpos2_t rpos, MAP2 *map, logtools_ivector2_t *v )$/;"	f
+map_pos_from_vec2	global-map.c	/^map_pos_from_vec2( logtools_vector2_t pos, MAP2 *map, logtools_ivector2_t *v )$/;"	f
+maphit	map2d.h	/^  float                ** maphit;$/;"	m	struct:__anon4
+mapprob	map2d.h	/^  float                ** mapprob;$/;"	m	struct:__anon4
+mapsize	map2d.h	/^  logtools_ivector2_t     mapsize;$/;"	m	struct:__anon4
+mapsum	map2d.h	/^  short                ** mapsum;$/;"	m	struct:__anon4
+maptype	mapview.h	/^  int  maptype;$/;"	m	class:MapView
+mark_maphitpoint	map.c	/^mark_maphitpoint( QUAD_TREE *tree, MAP2 *map, int x, int y, float value )$/;"	f
+mark_mapsumpoint	map.c	/^mark_mapsumpoint( QUAD_TREE *tree, MAP2 *map, int x, int y )$/;"	f
+max	map.c	/^max( int a, int b )$/;"	f
+max_dynamic_prob	map2d.h	/^  double                max_dynamic_prob;$/;"	m	struct:__anon5
+max_dynprob_change	map2d.h	/^  double                max_dynprob_change;$/;"	m	struct:__anon5
+max_usable_laser_range	map2d.h	/^  double                max_usable_laser_range;$/;"	m	struct:__anon5
+maxx	global-map.c	/^  double          maxx;$/;"	m	struct:__anon1	file:
+maxy	global-map.c	/^  double          maxy;$/;"	m	struct:__anon1	file:
+menubar	gui.h	/^    QMenuBar *menubar;$/;"	m	class:MapGUI
+metaObj	gui-moc.cpp	/^QMetaObject *MapGUI::metaObj = 0;$/;"	m	class:MapGUI	file:
+metaObj	mapview-moc.cpp	/^QMetaObject *MapView::metaObj = 0;$/;"	m	class:MapView	file:
+minimal_rmove_diff	map2d.c	/^minimal_rmove_diff( logtools_rmove2_t move,$/;"	f
+minimal_rpos_diff	map2d.c	/^minimal_rpos_diff( logtools_rpos2_t pos1, logtools_rpos2_t pos2, $/;"	f
+minx	global-map.c	/^  double          minx;$/;"	m	struct:__anon1	file:
+miny	global-map.c	/^  double          miny;$/;"	m	struct:__anon1	file:
+mode	map2d.h	/^  enum MODES            mode;$/;"	m	struct:__anon5	typeref:enum:__anon5::MODES
+mode	mapper_messages.h	/^  int mode;$/;"	m	struct:__anon7
+motion_model	map2d.h	/^  logtools_rmove2_t     motion_model;$/;"	m	struct:__anon5
+move	map2d.h	/^  logtools_rmove2_t    * move;$/;"	m	struct:__anon2
+navigation_mapper_set_mode_message	mapper_messages.h	/^} navigation_mapper_set_mode_message;$/;"	t	typeref:struct:__anon7
+navigation_mapper_status_message	mapper_messages.h	/^} navigation_mapper_status_message;$/;"	t	typeref:struct:__anon8
+newcenter	map.c	/^newcenter( logtools_svector2_t center, int i, short stepsize )$/;"	f
+noise_type	map2d.h	/^  int                   noise_type;$/;"	m	struct:__anon5
+number2str	mapview.cpp	/^number2str( int num )$/;"	f
+numlaserscans	map2d.h	/^  int                          numlaserscans;$/;"	m	struct:__anon6
+nummovements	map2d.h	/^  int                    nummovements;$/;"	m	struct:__anon2
+offset	map2d.h	/^  logtools_rpos2_t        offset;$/;"	m	struct:__anon4
+online_data	run_online.c	/^ONLINE_LASER_DATA       online_data;$/;"	v
+online_laserupdate	run_online.c	/^int                     online_laserupdate = FALSE;$/;"	v
+online_odo_update	run_online.c	/^int                     online_odo_update = FALSE;$/;"	v
+online_scan_ctr	run_online.c	/^int                     online_scan_ctr    = 0;$/;"	v
+paintRobot	mapview.cpp	/^MapView::paintRobot( logtools_rpos2_t pos )$/;"	f	class:MapView
+paint_robot	main.cpp	/^paint_robot( logtools_rpos2_t pos )$/;"	f
+papp	main.cpp	/^QApplication            * papp;$/;"	v
+plotRobotPosition	mapview.cpp	/^MapView::plotRobotPosition( logtools_rpos2_t pos  )$/;"	f	class:MapView
+plot_robot	main.cpp	/^plot_robot( logtools_rpos2_t pos )$/;"	f
+plot_robot_path	run_file.c	/^plot_robot_path( void )$/;"	f
+pos	map2d.h	/^  logtools_rpos2_t     * pos;$/;"	m	struct:__anon2
+pos_corr_step_size_forward	map2d.h	/^  double                pos_corr_step_size_forward;$/;"	m	struct:__anon5
+pos_corr_step_size_loop	map2d.h	/^  int                   pos_corr_step_size_loop;$/;"	m	struct:__anon5
+pos_corr_step_size_rotation	map2d.h	/^  double                pos_corr_step_size_rotation;$/;"	m	struct:__anon5
+pos_corr_step_size_sideward	map2d.h	/^  double                pos_corr_step_size_sideward;$/;"	m	struct:__anon5
+pos_diff_max_dist	map2d.h	/^  double                pos_diff_max_dist;$/;"	m	struct:__anon5
+pos_diff_max_rot	map2d.h	/^  double                pos_diff_max_rot;$/;"	m	struct:__anon5
+pos_diff_min_dist	map2d.h	/^  double                pos_diff_min_dist;$/;"	m	struct:__anon5
+pos_diff_min_rot	map2d.h	/^  double                pos_diff_min_rot;$/;"	m	struct:__anon5
+print_usage	main.cpp	/^print_usage( void )$/;"	f
+probability_between_move_olds	match-map.c	/^probability_between_move_olds( logtools_rmove2_t move1, logtools_rmove2_t move2 )$/;"	f
+probability_between_moves	match-map.c	/^probability_between_moves( logtools_rmove2_t move1, logtools_rmove2_t move2 )$/;"	f
+probability_with_move	match-map.c	/^probability_with_move( MAP2 map,$/;"	f
+probability_with_pos	match-map.c	/^probability_with_pos( MAP2 map, logtools_lasersens2_data_t data,$/;"	f
+pt	mapview.h	/^  QPainter         * pt;$/;"	m	class:MapView
+qt_cast	gui-moc.cpp	/^void* MapGUI::qt_cast( const char* clname )$/;"	f	class:MapGUI
+qt_cast	mapview-moc.cpp	/^void* MapView::qt_cast( const char* clname )$/;"	f	class:MapView
+qt_emit	gui-moc.cpp	/^bool MapGUI::qt_emit( int _id, QUObject* _o )$/;"	f	class:MapGUI
+qt_emit	mapview-moc.cpp	/^bool MapView::qt_emit( int _id, QUObject* _o )$/;"	f	class:MapView
+qt_invoke	gui-moc.cpp	/^bool MapGUI::qt_invoke( int _id, QUObject* _o )$/;"	f	class:MapGUI
+qt_invoke	mapview-moc.cpp	/^bool MapView::qt_invoke( int _id, QUObject* _o )$/;"	f	class:MapView
+qt_property	gui-moc.cpp	/^bool MapGUI::qt_property( int id, int f, QVariant* v)$/;"	f	class:MapGUI
+qt_property	mapview-moc.cpp	/^bool MapView::qt_property( int id, int f, QVariant* v)$/;"	f	class:MapView
+qt_static_property	gui-moc.cpp	/^bool MapGUI::qt_static_property( QObject* , int , int , QVariant* ){ return FALSE; }$/;"	f	class:MapGUI
+qt_static_property	mapview-moc.cpp	/^bool MapView::qt_static_property( QObject* , int , int , QVariant* ){ return FALSE; }$/;"	f	class:MapView
+qtree	map2d.h	/^  QUAD_TREE               qtree;$/;"	m	struct:__anon4
+random_number	map2d.h	/^  int                   random_number;$/;"	m	struct:__anon5
+read_ini_file	read-ini.c	/^read_ini_file( char *filename ) $/;"	f
+rec	run_file.c	/^logtools_log_data_t                 rec;$/;"	v
+remove_rear_scans	map2d.c	/^remove_rear_scans( logtools_log_data_t * rec, int laserID )$/;"	f
+resolution	map2d.h	/^  double                  resolution;$/;"	m	struct:__anon4
+rimage	mapview.h	/^  QImage           * rimage;$/;"	m	class:MapView
+rmove2_length	run_file.c	/^rmove2_length( logtools_rmove2_t move )$/;"	f
+robot_name	map2d.h	/^  char                  robot_name[MAX_NAME_LENGTH];$/;"	m	struct:__anon5
+robot_theta	mapper_messages.h	/^  double  robot_theta;$/;"	m	struct:__anon8
+robot_x	mapper_messages.h	/^  double  robot_x;$/;"	m	struct:__anon8
+robot_y	mapper_messages.h	/^  double  robot_y;$/;"	m	struct:__anon8
+rpos	mapview.h	/^  logtools_rpos2_t   rpos;$/;"	m	class:MapView
+rpos2_dist	run_file.c	/^rpos2_dist( logtools_rpos2_t pos1, logtools_rpos2_t pos2 )$/;"	f
+rpos_pos_from_map_pos	global-map.c	/^rpos_pos_from_map_pos( logtools_ivector2_t v, MAP2 *map, logtools_rpos2_t *rpos )$/;"	f
+run_data_file	run_file.c	/^run_data_file( MAP2D_SETTINGS settings,$/;"	f
+run_online	run_online.c	/^run_online( MAP2D_SETTINGS settings, MAP2 * lmap, MAP2 * gmap,$/;"	f
+save_rec2_movements	map2d.c	/^save_rec2_movements( logtools_log_data_t rec, REC2_MOVEMENTS * save, int laserID )$/;"	f
+scale	mapview.cpp	/^int scale = 1;$/;"	v
+setGlobalSize	mapview.cpp	/^MapView::setGlobalSize( int size_x, int size_y )$/;"	f	class:MapView
+setLocalSize	mapview.cpp	/^MapView::setLocalSize( int size_x, int size_y )$/;"	f	class:MapView
+set_default	read-ini.c	/^set_default( void )$/;"	f
+set_maphitpoint	map.c	/^set_maphitpoint( MAP2 *map, int x, int y, float value  )$/;"	f
+set_mapsumpoint	map.c	/^set_mapsumpoint( MAP2 *map, int x, int y )$/;"	f
+settings	read-ini.c	/^MAP2D_SETTINGS          settings;$/;"	v
+settingsMenu	gui.h	/^    QPopupMenu *settingsMenu;$/;"	m	class:MapGUI
+showRays	mapview.cpp	/^MapView::showRays( void )$/;"	f	class:MapView
+show_updates	map2d.h	/^  int                   show_updates;$/;"	m	struct:__anon5
+simple_clear_map	map.c	/^simple_clear_map( MAP2 *map )$/;"	f
+simple_compute_map	map.c	/^simple_compute_map( MAP2 *map )$/;"	f
+simple_convolve_map	map.c	/^simple_convolve_map( MAP2 *map, logtools_gauss_kernel_t kernel )$/;"	f
+simple_inverse_convolve_map	map.c	/^simple_inverse_convolve_map( MAP2 *map, logtools_gauss_kernel_t kernel )$/;"	f
+staticMetaObject	gui-moc.cpp	/^QMetaObject* MapGUI::staticMetaObject()$/;"	f	class:MapGUI
+staticMetaObject	mapview-moc.cpp	/^QMetaObject* MapView::staticMetaObject()$/;"	f	class:MapView
+timestamp	mapper_messages.h	/^  double timestamp;$/;"	m	struct:__anon7
+timestamp	mapper_messages.h	/^  double timestamp;$/;"	m	struct:__anon8
+tr	gui-moc.cpp	/^QString MapGUI::tr( const char *s, const char *c )$/;"	f	class:MapGUI
+tr	mapview-moc.cpp	/^QString MapView::tr( const char *s, const char *c )$/;"	f	class:MapView
+trUtf8	gui-moc.cpp	/^QString MapGUI::trUtf8( const char *s, const char *c )$/;"	f	class:MapGUI
+trUtf8	mapview-moc.cpp	/^QString MapView::trUtf8( const char *s, const char *c )$/;"	f	class:MapView
+tree_list	map.c	/^tree_list( QUAD_TREE *tree , int *ct )$/;"	f
+updateMap	mapview.cpp	/^MapView::updateMap(  )$/;"	f	class:MapView
+update_change_map	main.cpp	/^update_change_map( void )$/;"	f
+update_global_map	global-map.c	/^update_global_map( logtools_lasersens2_data_t lsens, MAP2 * map )$/;"	f
+update_map	main.cpp	/^update_map( void )$/;"	f
+updated	map2d.h	/^  unsigned char        ** updated;$/;"	m	struct:__anon4
+use_correction	map2d.h	/^  int                   use_correction;$/;"	m	struct:__anon5
+use_error_analyze	map2d.h	/^  int                   use_error_analyze;$/;"	m	struct:__anon5
+use_global_map	map2d.h	/^  int                   use_global_map;$/;"	m	struct:__anon5
+use_graphics	map2d.h	/^  int                   use_graphics;$/;"	m	struct:__anon5
+using_multiple_laser	map2d.h	/^  int                   using_multiple_laser;$/;"	m	struct:__anon5
+vec2_from_map_pos	global-map.c	/^vec2_from_map_pos( logtools_ivector2_t v, MAP2 *map, logtools_vector2_t *pos )$/;"	f
+view_path	map2d.h	/^  int                   view_path;$/;"	m	struct:__anon5
+window_maptype	main.cpp	/^window_maptype( void )$/;"	f
+window_show_rays	main.cpp	/^window_show_rays( void )$/;"	f
+wptr	main.cpp	/^MapGUI                  * wptr;$/;"	v
+write_log_entry	write-map.c	/^write_log_entry( FILE * fp, logtools_lasersens2_data_t * lsens )$/;"	f
+x	map2d.h	/^  short                          x;$/;"	m	struct:__anon3
+y	map2d.h	/^  short                          y;$/;"	m	struct:__anon3
+~MapGUI	gui.cpp	/^MapGUI::~MapGUI()$/;"	f	class:MapGUI

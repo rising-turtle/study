@@ -1,0 +1,181 @@
+# INFO: laser id = 0
+#####################################################################
+# INFO: read carmen-file-type!
+# read file fr101.carmen.log ...
+#####################################################################
+# found 10329 positions
+# found 5485 laserscans
+***************************************
+Estimating map size:
+  start_x: 254.8
+  start_y: 663.2
+  size_x : 6460.8
+  size_y : 6134.1
+***************************************
+* INFO: allocating memory ... done
+* INFO: map:            861 817
+* INFO: center:         33.0 88.0
+* INFO: resolution:      7.50
+* INFO: real-size:      [-6457.5 6457.5] [-6127.5 6127.5]
+***************************************
+* INFO: allocating memory ... done
+* INFO: map:            66 126
+* INFO: center:         0.0 63.0
+* INFO: resolution:      7.50
+* INFO: real-size:      [-495.0 495.0] [-945.0 945.0]
+***************************************
+-->1 63
+best idx = 0 value 0.000000   -> scan 228
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 303
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 414
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 520
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 636
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 722
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 850
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 944
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 1016
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 1108
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 1231
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 1295
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 1379
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 1446
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 1526
+
+samplesum = 0.000001
+best idx = 0 value 0.000000   -> scan 1662
+
+samplesum = 0.000174
+best idx = 0 value 0.000000   -> scan 1763
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 1872
+
+samplesum = 0.000170
+best idx = 0 value 0.000000   -> scan 1951
+
+samplesum = 0.000001
+best idx = 0 value 0.000000   -> scan 2043
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 2166
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 2225
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 2359
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 2521
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 2596
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 2724
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 2802
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 2875
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3032
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3163
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3275
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3397
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3590
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3649
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3714
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3810
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 3906
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4011
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4162
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4229
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4298
+
+samplesum = 0.000001
+best idx = 0 value 0.000000   -> scan 4366
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4440
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4512
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4634
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4807
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 4930
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 5007
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 5080
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 5275
+
+samplesum = 0.000000
+best idx = 0 value 0.000000   -> scan 5391
+
+samplesum = 0.000000
+writing file fastslam-result.rec ...

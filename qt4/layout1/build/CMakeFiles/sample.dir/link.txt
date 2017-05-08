@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/sample.dir/layout1.o  -o sample -rdynamic -lQt3Support -lQtGui -lQtXml -lQtSql -lQtNetwork -lQtCore 

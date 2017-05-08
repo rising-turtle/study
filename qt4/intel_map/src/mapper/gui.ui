@@ -1,0 +1,537 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>MapGUI</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>MapGUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>557</width>
+            <height>479</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>7</hsizetype>
+            <vsizetype>7</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>540</width>
+            <height>449</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Map 2D</string>
+    </property>
+    <hbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="spacing">
+            <number>0</number>
+        </property>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>Layout5</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="MapView">
+                    <property name="name">
+                        <cstring>Map</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>7</vsizetype>
+                            <horstretch>1</horstretch>
+                            <verstretch>1</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>400</width>
+                            <height>400</height>
+                        </size>
+                    </property>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>Actions</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>7</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>130</width>
+                            <height>400</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>130</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="lineWidth">
+                        <number>1</number>
+                    </property>
+                    <property name="margin">
+                        <number>0</number>
+                    </property>
+                    <property name="midLineWidth">
+                        <number>0</number>
+                    </property>
+                    <property name="title">
+                        <string>Actions</string>
+                    </property>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>Layout3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>21</y>
+                                <width>109</width>
+                                <height>288</height>
+                            </rect>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <property name="margin">
+                                <number>0</number>
+                            </property>
+                            <property name="spacing">
+                                <number>6</number>
+                            </property>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>UpdateMap</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Update Map</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>CenterRobot</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Center Robot</string>
+                                </property>
+                            </widget>
+                            <widget class="QFrame">
+                                <property name="name">
+                                    <cstring>Frame3_2</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>7</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>0</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Raised</enum>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>0</number>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>GlobalMapType</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Global Map</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>LocalMapType</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Local Map</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>ShowBeamsType</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Show Beams</string>
+                                </property>
+                            </widget>
+                            <widget class="QFrame">
+                                <property name="name">
+                                    <cstring>Frame3_2_2</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>7</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>0</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Raised</enum>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>0</number>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>ClearMap</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Clear Map</string>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                </widget>
+            </hbox>
+        </widget>
+    </hbox>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>menubar</cstring>
+    </property>
+    <item text="&amp;File" name="fileMenu">
+        <action name="fileNewAction"/>
+        <action name="fileOpenAction"/>
+        <separator/>
+        <action name="filePrintAction"/>
+        <separator/>
+        <action name="fileExitAction"/>
+    </item>
+    <item text="Settings" name="settingsMenu">
+        <action name="ChangeMapAction"/>
+        <action name="ViewPathAction"/>
+    </item>
+</menubar>
+<toolbars>
+</toolbars>
+<customwidgets>
+    <customwidget>
+        <class>MapView</class>
+        <header location="global">mapview.h</header>
+        <sizehint>
+            <width>-1</width>
+            <height>-1</height>
+        </sizehint>
+        <container>1</container>
+        <sizepolicy>
+            <hordata>7</hordata>
+            <verdata>7</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image0</pixmap>
+        <slot access="public" specifier="">slot()</slot>
+    </customwidget>
+</customwidgets>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>fileNewAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>New</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;New</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+N</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileOpenAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Open</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Open...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+O</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Save</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Save</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Save As</string>
+        </property>
+        <property name="menuText">
+            <string>Save &amp;As...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>filePrintAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Print</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Print...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+P</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExitAction</cstring>
+        </property>
+        <property name="text">
+            <string>Exit</string>
+        </property>
+        <property name="menuText">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="statusTip">
+            <string>Exit2</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>ChangeMapAction</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="on">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Open</string>
+        </property>
+        <property name="menuText">
+            <string>Change Map</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>ViewPathAction</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>View Path</string>
+        </property>
+        <property name="menuText">
+            <string>View Path</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+</actions>
+<images>
+    <image name="image0">
+        <data format="XBM.GZ" length="79">789c534e494dcbcc4b554829cdcdad8c2fcf4c29c95030e0524611cd48cd4ccf28010a1797249664262b2467241641a592324b8aa363156c15aab914146aadb90067111b1f</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>fileNewAction</sender>
+        <signal>activated()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>MenuNewSlot()</slot>
+    </connection>
+    <connection>
+        <sender>fileOpenAction</sender>
+        <signal>activated()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>MenuOpenSlot()</slot>
+    </connection>
+    <connection>
+        <sender>filePrintAction</sender>
+        <signal>activated()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>MenuPrintSlot()</slot>
+    </connection>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>MenuExitSlot()</slot>
+    </connection>
+    <connection>
+        <sender>UpdateMap</sender>
+        <signal>clicked()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>UpdateMapSlot()</slot>
+    </connection>
+    <connection>
+        <sender>CenterRobot</sender>
+        <signal>clicked()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>CenterRobotSlot()</slot>
+    </connection>
+    <connection>
+        <sender>GlobalMapType</sender>
+        <signal>clicked()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>GlobalMapTypeSlot()</slot>
+    </connection>
+    <connection>
+        <sender>LocalMapType</sender>
+        <signal>clicked()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>LocalMapTypeSlot()</slot>
+    </connection>
+    <connection>
+        <sender>ShowBeamsType</sender>
+        <signal>clicked()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>ShowBeamsTypeSlot()</slot>
+    </connection>
+    <connection>
+        <sender>ClearMap</sender>
+        <signal>clicked()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>ClearMapSlot()</slot>
+    </connection>
+    <connection>
+        <sender>ViewPathAction</sender>
+        <signal>activated()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>ViewPathSlot()</slot>
+    </connection>
+    <connection>
+        <sender>ChangeMapAction</sender>
+        <signal>activated()</signal>
+        <receiver>MapGUI</receiver>
+        <slot>ChangeMapSlot()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>UpdateMap</tabstop>
+    <tabstop>CenterRobot</tabstop>
+    <tabstop>GlobalMapType</tabstop>
+    <tabstop>LocalMapType</tabstop>
+    <tabstop>ShowBeamsType</tabstop>
+    <tabstop>ClearMap</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in declaration">carmen/logtools.h</include>
+    <include location="local" impldecl="in implementation">gui.ui.h</include>
+</includes>
+<slots>
+    <slot>UpdateMapSlot()</slot>
+    <slot>CenterRobotSlot()</slot>
+    <slot>ClearMapSlot()</slot>
+    <slot>MenuNewSlot()</slot>
+    <slot>MenuOpenSlot()</slot>
+    <slot>MenuPrintSlot()</slot>
+    <slot>MenuExitSlot()</slot>
+    <slot>GlobalMapTypeSlot()</slot>
+    <slot>LocalMapTypeSlot()</slot>
+    <slot>ShowBeamsTypeSlot()</slot>
+    <slot>ViewPathSlot()</slot>
+    <slot>ChangeMapSlot()</slot>
+    <slot>ClearMapSlot( bool )</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>mapview.h</includehint>
+</includehints>
+</UI>

@@ -1,0 +1,10 @@
+[ 7799.211813] usb-storage: waiting for device to settle before scanning
+[ 7804.217329] usb-storage: device scan complete
+[ 7804.253980] scsi 5:0:0:0: CD-ROM            USBModem Disk             2.31 PQ: 0 ANSI: 2
+[ 7804.314238] sr1: scsi-1 drive
+[ 7804.315292] sr 5:0:0:0: Attached scsi CD-ROM sr1
+[ 7804.334028] sr 5:0:0:0: Attached scsi generic sg2 type 5
+[ 7805.760993] ISO 9660 Extensions: Microsoft Joliet Level 3
+[ 7805.824528] ISOFS: changing to secondary root
+[ 7843.169589] usb 1-1: USB disconnect, address 4
+[ 7843.576744] scsi 5:0:0:0: rejecting I/O to dead device

@@ -1,0 +1,153 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADDB	utils.c	326;"	d	file:
+EPSILON	main.cpp	17;"	d	file:
+EPSILON	utils.c	8;"	d	file:
+FASTSLAM_SETTINGS	fast-slam.h	/^} FASTSLAM_SETTINGS;$/;"	t	typeref:struct:__anon1
+GRID_FAST_SLAM_H	fast-slam.h	2;"	d
+GUI_FILES	Makefile	/^GUI_FILES = 		.\/graphics-moc.cpp$/;"	m
+HISTORY	fast-slam.h	/^} HISTORY;$/;"	t	typeref:struct:__anon3
+IN	utils.c	5;"	d	file:
+LINK	Makefile	/^LINK  = g++$/;"	m
+MAN_PAGES	Makefile	/^MAN_PAGES = $/;"	m
+MAP2	fast-slam.h	/^} MAP2;$/;"	t	typeref:struct:__anon2
+MAP_STD_VAL	utils.c	9;"	d	file:
+MAX_COMMAND_LENGTH	read-ini.c	46;"	d	file:
+MAX_NAME_LENGTH	fast-slam.h	20;"	d
+MAX_STRING_LENGTH	main.cpp	15;"	d	file:
+MODULE_COMMENT	Makefile	/^MODULE_COMMENT = "Grid based Fast SLAM by D. Haehnel"$/;"	m
+MODULE_NAME	Makefile	/^MODULE_NAME = "GRID_FASTSLAM"$/;"	m
+MapPainter	graphics.cpp	/^MapPainter::MapPainter( QWidget* parent, const char * )$/;"	f	class:MapPainter
+MapPainter	graphics.h	/^class MapPainter : public QScrollView {$/;"	c
+NUM_COLORS	graphics.cpp	161;"	d	file:
+NUM_TESTS	main.cpp	16;"	d	file:
+OUT	utils.c	6;"	d	file:
+PARTICLE	fast-slam.h	/^} PARTICLE;$/;"	t	typeref:struct:__anon4
+PUBLIC_BINARIES	Makefile	/^PUBLIC_BINARIES = $/;"	m
+PUBLIC_INCLUDES	Makefile	/^PUBLIC_INCLUDES = $/;"	m
+PUBLIC_LIBRARIES	Makefile	/^PUBLIC_LIBRARIES = $/;"	m
+QT3_DIR	Makefile	/^QT3_DIR = \/usr\/lib\/qt3$/;"	m
+QT_NO_COMPAT	graphics-moc.cpp	10;"	d	file:
+RGB	fast-slam.h	/^} RGB;$/;"	t	typeref:struct:__anon6
+SAMPLE_SET	fast-slam.h	/^} SAMPLE_SET;$/;"	t	typeref:struct:__anon5
+SOURCES	Makefile	/^SOURCES =		read-ini.c line.c utils.c graphics.cpp main.cpp$/;"	m
+TARGETS	Makefile	/^TARGETS = 		fast-slam$/;"	m
+UNKNOWN	utils.c	4;"	d	file:
+b	fast-slam.h	/^  double            b;$/;"	m	struct:__anon6
+bbox	fast-slam.h	/^  logtools_bounding_box_t      bbox;$/;"	m	struct:__anon3
+calc	fast-slam.h	/^  float               ** calc;$/;"	m	struct:__anon2
+center	fast-slam.h	/^  logtools_vector2_t     center;$/;"	m	struct:__anon2
+centerView	graphics.cpp	/^MapPainter::centerView( MAP2 map, logtools_rpos2_t pos )$/;"	f	class:MapPainter
+className	graphics-moc.cpp	/^const char *MapPainter::className() const$/;"	f	class:MapPainter
+clear_map	main.cpp	/^clear_map( MAP2 * map, logtools_rpos2_t pos )$/;"	f
+clear_scans	main.cpp	/^clear_scans( MAP2 * map )$/;"	f
+colors	graphics.cpp	/^RGB colors[] = { { 255,   0,   0 },$/;"	v
+compute_beam_prob	utils.c	/^compute_beam_prob( MAP2 * map, logtools_rpos2_t pos, $/;"	f
+compute_calc_of_map	utils.c	/^compute_calc_of_map( MAP2 * map )$/;"	f
+compute_laser_bounding_box	utils.c	/^compute_laser_bounding_box( logtools_rpos2_t pos, $/;"	f
+compute_probs_of_map	utils.c	/^compute_probs_of_map( MAP2 * map )$/;"	f
+compute_scan_probability	utils.c	/^compute_scan_probability( MAP2 * map, logtools_rpos2_t pos, $/;"	f
+copy_particle	utils.c	/^copy_particle( PARTICLE src, PARTICLE *dest )$/;"	f
+detect_size	fast-slam.h	/^  int      detect_size;$/;"	m	struct:__anon1
+detect_size_border	fast-slam.h	/^  double   detect_size_border;$/;"	m	struct:__anon1
+doPaint	graphics.cpp	/^MapPainter::doPaint(  ) {$/;"	f	class:MapPainter
+drawContents	graphics.cpp	/^MapPainter::drawContents( QPainter * p, int , int  , int , int )$/;"	f	class:MapPainter
+drawparticles	graphics.cpp	/^MapPainter::drawparticles( MAP2 map, SAMPLE_SET pset, int, int showpath )$/;"	f	class:MapPainter
+drawrobot	graphics.cpp	/^MapPainter::drawrobot( MAP2 map, logtools_rpos2_t pos, int color )$/;"	f	class:MapPainter
+dumpMapName	graphics.cpp	/^dumpMapName( char * prefix )$/;"	f
+dump_filename	fast-slam.h	/^  char     dump_filename[MAX_NAME_LENGTH];$/;"	m	struct:__anon1
+dump_screen	fast-slam.h	/^  int      dump_screen;$/;"	m	struct:__anon1
+dumpscreen	graphics.cpp	/^MapPainter::dumpscreen( void )$/;"	f	class:MapPainter
+find_best_particle_logsum	utils.c	/^find_best_particle_logsum( SAMPLE_SET pset )$/;"	f
+find_best_particle_value	utils.c	/^find_best_particle_value( SAMPLE_SET pset )$/;"	f
+forward_noise	fast-slam.h	/^  double   forward_noise;$/;"	m	struct:__anon1
+g	fast-slam.h	/^  double            g;$/;"	m	struct:__anon6
+get_beam_prob	utils.c	/^get_beam_prob( logtools_rpos2_t pos, double val, double angle,$/;"	f
+get_map_val	utils.c	/^get_map_val( logtools_ivector2_t pos, MAP2 map )$/;"	f
+get_map_val2	utils.c	/^get_map_val2( logtools_ivector2_t pos, MAP2 map )$/;"	f
+get_map_val3	utils.c	/^get_map_val3( logtools_ivector2_t pos, MAP2 map )$/;"	f
+grid_line	line.c	/^grid_line( logtools_ivector2_t start, logtools_ivector2_t end, logtools_grid_line_t *line ) {$/;"	f
+grid_line_core	line.c	/^grid_line_core( logtools_ivector2_t start, logtools_ivector2_t end, logtools_grid_line_t *line )$/;"	f
+hist	fast-slam.h	/^  HISTORY         * hist;$/;"	m	struct:__anon4
+histlen	fast-slam.h	/^  int               histlen;$/;"	m	struct:__anon4
+image	graphics.h	/^  QImage      * image;$/;"	m	class:MapPainter
+intersect_bboxes	utils.c	/^intersect_bboxes( logtools_bounding_box_t box1, logtools_bounding_box_t box2 )$/;"	f
+kernel_size	fast-slam.h	/^  int      kernel_size;$/;"	m	struct:__anon1
+laser_id	fast-slam.h	/^  int      laser_id;$/;"	m	struct:__anon1
+logsum	fast-slam.h	/^  double            logsum;$/;"	m	struct:__anon4
+logtools_grid_object_t	fast-slam.h	73;"	d
+logtools_rpos2_hist_t	main.cpp	/^} logtools_rpos2_hist_t;$/;"	t	typeref:struct:__anon7	file:
+loop	main.cpp	/^int loop = TRUE;$/;"	v
+main	main.cpp	/^main( int argc, char** argv)$/;"	f
+map_clear	utils.c	/^map_clear( MAP2 *map )$/;"	f
+map_initialize	utils.c	/^map_initialize( MAP2 *map, int sx, int sy, int center_x,$/;"	f
+map_pos_from_rpos	utils.c	/^map_pos_from_rpos( logtools_rpos2_t rpos, MAP2 *map, logtools_ivector2_t *v )$/;"	f
+map_pos_from_vec2	utils.c	/^map_pos_from_vec2( logtools_vector2_t pos, MAP2 *map, logtools_ivector2_t *v )$/;"	f
+maphit	fast-slam.h	/^  float               ** maphit;$/;"	m	struct:__anon2
+mapprob	fast-slam.h	/^  float               ** mapprob;$/;"	m	struct:__anon2
+mapsize	fast-slam.h	/^  logtools_ivector2_t    mapsize;$/;"	m	struct:__anon2
+mapsum	fast-slam.h	/^  short               ** mapsum;$/;"	m	struct:__anon2
+mark_map_cell	utils.c	/^mark_map_cell( logtools_ivector2_t pos, MAP2 * map )$/;"	f
+max_likelihood	fast-slam.h	/^  double   max_likelihood;$/;"	m	struct:__anon1
+max_range_length	fast-slam.h	/^  double   max_range_length;$/;"	m	struct:__anon1
+max_usable_length	fast-slam.h	/^  double   max_usable_length;$/;"	m	struct:__anon1
+metaObj	graphics-moc.cpp	/^QMetaObject *MapPainter::metaObj = 0;$/;"	m	class:MapPainter	file:
+min_likelihood	fast-slam.h	/^  double   min_likelihood;$/;"	m	struct:__anon1
+min_step_distance	fast-slam.h	/^  double   min_step_distance;$/;"	m	struct:__anon1
+num_samples	fast-slam.h	/^  int      num_samples;$/;"	m	struct:__anon1
+number2str	graphics.cpp	/^number2str( int num )$/;"	f
+numparticles	fast-slam.h	/^  int               numparticles;$/;"	m	struct:__anon5
+offset	fast-slam.h	/^  logtools_rpos2_t       offset;$/;"	m	struct:__anon2
+outside	fast-slam.h	/^  int               outside;$/;"	m	struct:__anon4
+particle	fast-slam.h	/^  PARTICLE        * particle;$/;"	m	struct:__anon5
+pix	graphics.h	/^  QPixmap     * pix;$/;"	m	class:MapPainter
+pm	graphics.h	/^  QPixmap     * pm;$/;"	m	class:MapPainter
+pos	fast-slam.h	/^  logtools_rpos2_t             pos;$/;"	m	struct:__anon3
+pos	fast-slam.h	/^  logtools_rpos2_t             pos;$/;"	m	struct:__anon4
+pos	main.cpp	/^  logtools_rpos2_t     pos;$/;"	m	struct:__anon7	file:
+print_usage	main.cpp	/^print_usage( void )$/;"	f
+prob_unknown_space	utils.c	/^prob_unknown_space( double length, int endpoint )$/;"	f
+pt	graphics.h	/^  QPainter    * pt;$/;"	m	class:MapPainter
+qt_cast	graphics-moc.cpp	/^void* MapPainter::qt_cast( const char* clname )$/;"	f	class:MapPainter
+qt_emit	graphics-moc.cpp	/^bool MapPainter::qt_emit( int _id, QUObject* _o )$/;"	f	class:MapPainter
+qt_invoke	graphics-moc.cpp	/^bool MapPainter::qt_invoke( int _id, QUObject* _o )$/;"	f	class:MapPainter
+qt_property	graphics-moc.cpp	/^bool MapPainter::qt_property( int id, int f, QVariant* v)$/;"	f	class:MapPainter
+qt_static_property	graphics-moc.cpp	/^bool MapPainter::qt_static_property( QObject* , int , int , QVariant* ){ return FALSE; }$/;"	f	class:MapPainter
+r	fast-slam.h	/^  double            r;$/;"	m	struct:__anon6
+read_ini_file	read-ini.c	/^read_ini_file( char *filename ) $/;"	f
+refresh	graphics.cpp	/^MapPainter::refresh( MAP2 )$/;"	f	class:MapPainter
+resample	utils.c	/^resample( SAMPLE_SET sample1, SAMPLE_SET * sample2 )$/;"	f
+resolution	fast-slam.h	/^  double                 resolution;$/;"	m	struct:__anon2
+resolution	fast-slam.h	/^  double   resolution;$/;"	m	struct:__anon1
+result_filename	fast-slam.h	/^  char     result_filename[MAX_NAME_LENGTH];$/;"	m	struct:__anon1
+rotation_noise	fast-slam.h	/^  double   rotation_noise;$/;"	m	struct:__anon1
+rpos2_length	main.cpp	/^rpos2_length( logtools_rpos2_t pos1, logtools_rpos2_t pos2 )$/;"	f
+setSize	graphics.cpp	/^MapPainter::setSize( int size_x, int size_y )$/;"	f	class:MapPainter
+set_default	read-ini.c	/^set_default( void )$/;"	f
+settings	read-ini.c	/^FASTSLAM_SETTINGS          settings;$/;"	v
+show_graphics	fast-slam.h	/^  int      show_graphics;$/;"	m	struct:__anon1
+show_local_map	fast-slam.h	/^  int      show_local_map;$/;"	m	struct:__anon1
+showscan	graphics.cpp	/^MapPainter::showscan( MAP2 map, logtools_lasersens2_data_t lsens, double maxrange )$/;"	f	class:MapPainter
+shutdown	main.cpp	/^shutdown( int sig ) {$/;"	f
+sideward_noise	fast-slam.h	/^  double   sideward_noise;$/;"	m	struct:__anon1
+simple_convolve_map	utils.c	/^simple_convolve_map( MAP2 *map, logtools_gauss_kernel_t kernel )$/;"	f
+simple_convolve_map2	utils.c	/^simple_convolve_map2( MAP2 *map)$/;"	f
+size_x	fast-slam.h	/^  double   size_x;$/;"	m	struct:__anon1
+size_y	fast-slam.h	/^  double   size_y;$/;"	m	struct:__anon1
+start_x	fast-slam.h	/^  double   start_x;$/;"	m	struct:__anon1
+start_y	fast-slam.h	/^  double   start_y;$/;"	m	struct:__anon1
+staticMetaObject	graphics-moc.cpp	/^QMetaObject* MapPainter::staticMetaObject()$/;"	f	class:MapPainter
+stretch_function	utils.c	/^stretch_function( double x )$/;"	f
+time	main.cpp	/^  struct timeval       time;$/;"	m	struct:__anon7	typeref:struct:__anon7::timeval	file:
+tr	graphics-moc.cpp	/^QString MapPainter::tr( const char *s, const char *c )$/;"	f	class:MapPainter
+trUtf8	graphics-moc.cpp	/^QString MapPainter::trUtf8( const char *s, const char *c )$/;"	f	class:MapPainter
+unknown_likelihood	fast-slam.h	/^  double   unknown_likelihood;$/;"	m	struct:__anon1
+update	graphics.cpp	/^MapPainter::update( MAP2 map )$/;"	f	class:MapPainter
+update_map	utils.c	/^update_map( MAP2 * map, int numvalues, float  * val, float * angle,$/;"	f
+val	fast-slam.h	/^  double            val;$/;"	m	struct:__anon4
+write_map	utils.c	/^write_map( MAP2 map, char *filename )$/;"	f
+~MapPainter	graphics.h	/^  ~MapPainter( void ){};$/;"	f	class:MapPainter

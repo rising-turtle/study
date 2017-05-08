@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+
+using namespace std;
+
+void test(){
+	srand(NULL);
+	for(int i=0;i<500000;i++){
+		float fa = (float)(rand()%100000)/3.0;
+		if(round(fa)!=floor(fa+0.5)){
+			cout<<"Not equal: ";
+			cout<<"round: "<<round(fa)<<"; floor: "<<floor(fa+0.5)<<endl;
+		}
+		cout<<"equal: "<<round(fa)<<endl;
+	}
+	cout<<"finished!"<<endl;
+}
+
+int main()
+{
+	test();
+	/*cout<<"round: "<<round(fa)<<endl;
+	cout<<"floor: "<<floor(fa+0.5)<<endl;
+	cout<<"ceil: "<<ceil(fa)<<endl;*/
+	return 0;
+}

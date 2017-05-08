@@ -1,0 +1,119 @@
+#include "map2d.h"
+namespace{
+	const float little_tail = 0.0005;
+}
+CMap2D::CMap2D(){
+	default_init(); // init the map using default parameters
+}
+CMap2D::~CMap2D(){}
+
+void CMap2D::default_init(){
+	initializeMap(800,600,400,300,0,0,0.05); // 5cm cell size
+}
+
+void CMap2D::initializeMap(int size_x, int size_y, int start_x, int start_y,float offset_x, float offset_y, double resolution)
+{
+	m_size_x = size_x;
+	m_size_y = size_y;
+	m_center_x = start_x;
+	m_center_y = start_y;
+	m_offset_x = offset_x;
+	m_offset_y = offset_y;
+	m_resolution = resolution;
+	m_max_line_lens = 4*max(m_size_x,m_size_y);
+
+	m_maphit.resize(size_x, vector<float>(size_y) );
+	m_mapsum.resize(size_x, vector<float>(size_y) );
+	m_mapprob.resize(size_x, vector<float>(size_y));
+
+	/*m_maphit = (float**)malloc(size_x*size_y*sizeof(float*));
+	m_mapsum = (float**)malloc(size_x*size_y*sizeof(float*));
+	m_mapprob = (float**)malloc(size_x*size_y*sizeof(float*));
+	
+	for(int i=0;i<size_x;i++)
+		for(int j=0;j<size_y;j++)
+		{
+			m_maphit[i*size_y + j] = 0;
+			m_mapsum[i*size_y + j] = 0;
+			m_mapprob[i*size_y + j] = 0;
+		}*/
+}
+void CMap2D::uninitMap(){}
+
+// input the global cordinates of the scans and current pose
+void CMap2D::updateMap(float* gx, float* gy, int n, float rx, float ry, float th)
+{
+	static vector<ivector2d>    	 line;
+	int 				 cnt; // number of this line
+	int                            i, j, x, y;
+	ivector2d            		 start, end;
+	
+	// n == -1 indicate finishing sending the map info
+	if(n<0){
+		cout<<"all the map info has been sent!"<<endl;
+		return; 
+	}
+	
+	static int nframe = 0;
+	bool record = false;
+	cout<<"this is frame: "<<++nframe<<endl;
+	if(nframe>= 1438){
+		nframe = nframe;
+		record = true;
+	}
+
+	if(line.size()<=0) line.resize(m_max_line_lens);
+
+	// caculate start grid
+	mapPosfromPoint(Point2D(rx,ry),start);
+	for(int i=0;i<n;i++){
+		if(record){
+			cout<<"record bearing "<<i<<endl;
+		}
+		if(record && i==106){
+			i = i;
+		}
+		
+		if(i>105){
+		  i = i;
+		}
+		mapPosfromPoint(Point2D(*(gx+i),*(gy+i)),end);
+		if( end.x>=0 && end.x <= m_size_x \
+				&& end.y>=0 && end.y <= m_size_y){
+			m_maphit[end.x][end.y]++;	
+		}
+
+		// line update model
+		grid_line( start, end, line, cnt );
+		for (int j=0;j<cnt/*line.size()*/;j++) {
+			x = line[j].x;
+			y = line[j].y;
+			if ( x>=0 && x<m_size_x &&
+					y>=0 && y<m_size_y ) {
+				if (j>=/*line.size()*/cnt-2) {
+					m_maphit[x][y]++;
+				}
+				m_mapsum[x][y]++;
+			} 
+		}
+	}
+}
+void CMap2D::mapPosfromPoint(Point2D point, ivector2d& pos)
+{
+	if(point.x < m_offset_x){
+		pos.x = (int) (m_center_x+
+				((point.x-m_offset_x +little_tail )/(double)m_resolution)- 1);
+	}else{
+		pos.x = (int) (m_center_x + 
+				((point.x-m_offset_x + little_tail)/(double)m_resolution));
+	}
+	if(point.y < m_offset_y){
+		pos.y = (int) (m_center_y+
+				((point.y-m_offset_y +little_tail )/(double)m_resolution)- 1);
+
+	}else{
+		pos.y = (int) (m_center_y + 
+				((point.y-m_offset_y+little_tail)/(double)m_resolution));
+	}
+}
+

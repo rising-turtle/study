@@ -1,0 +1,21 @@
+In file included from /usr/include/boost/mpl/aux_/include_preprocessed.hpp:37:0,
+                 from /usr/include/boost/mpl/aux_/arithmetic_op.hpp:34,
+                 from /usr/include/boost/mpl/plus.hpp:19,
+                 from 3_3.cpp:10:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp: In instantiation of ‘boost::mpl::plus_tag<mpl_::arg<1> >’:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:109:8:   instantiated from ‘boost::mpl::plus<mpl_::arg<1>, mpl_::int_<42> >’
+3_3.cpp:44:88:   instantiated from here
+/usr/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:60:29: error: no type named ‘tag’ in ‘struct mpl_::arg<1>’
+3_3.cpp:44:60: error: ‘type’ is not a member of ‘boost::mpl::plus<mpl_::arg<1>, mpl_::int_<42> >’
+3_3.cpp:44:60: error: ‘type’ is not a member of ‘boost::mpl::plus<mpl_::arg<1>, mpl_::int_<42> >’
+3_3.cpp:44:106: error: template argument 1 is invalid
+3_3.cpp:44:106: error: template argument 2 is invalid
+3_3.cpp:44:106: error: template argument 3 is invalid
+3_3.cpp:44:53: warning: extended initializer lists only available with -std=c++0x or -std=gnu++0x [enabled by default]
+3_3.cpp:45:2: error: wrong number of template arguments (1, should be 2)
+3_3.cpp:22:8: error: provided for ‘template<class UnaryMetaFunctionClass, class Arg> struct apply1’
+3_3.cpp:45:3: error: expected ‘{’ before ‘;’ token
+3_3.cpp: In function ‘int main()’:
+3_3.cpp:68:25: error: type/value mismatch at argument 1 in template parameter list for ‘template<class N> struct partial_metafunction’
+3_3.cpp:68:25: error:   expected a type, got ‘10’
+3_3.cpp:68:28: error: invalid type in declaration before ‘;’ token

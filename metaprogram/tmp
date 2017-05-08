@@ -1,0 +1,6 @@
+dimension.cpp:91:15: error: wrong number of template arguments (3, should be 2)
+dimension.cpp:85:8: error: provided for ‘template<class T, class D> struct qq’
+dimension.cpp: In constructor ‘qq<T, D>::qq(int&)’:
+dimension.cpp:91:31: error: request for member ‘v’ in ‘rhs’, which is of non-class type ‘int’
+dimension.cpp: In function ‘int main()’:
+dimension.cpp:119:28: error: conversion from ‘qq<float, boost::mpl::v_item<mpl_::integral_c<int, 1>, boost::mpl::v_item<mpl_::integral_c<int, 1>, boost::mpl::vector0<mpl_::na>, 0>, 0> >’ to non-scalar type ‘qq<float, boost::mpl::vector_c<int, 1l, 1l> >’ requested

@@ -1,0 +1,82 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AR	Makefile	/^AR            = ar cqs$/;"	m
+CC	Makefile	/^CC            = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT $(DEFINES)$/;"	m
+CGenPoints	gen_points.cpp	/^CGenPoints::CGenPoints():m_px(N),m_py(N),m_pz(N){$/;"	f	class:CGenPoints
+CGenPoints	gen_points.h	/^class CGenPoints: public QWidget$/;"	c
+CHK_DIR_EXISTS	Makefile	/^CHK_DIR_EXISTS= test -d$/;"	m
+COMPRESS	Makefile	/^COMPRESS      = gzip -9f$/;"	m
+COPY	Makefile	/^COPY          = cp -f$/;"	m
+COPY_DIR	Makefile	/^COPY_DIR      = $(COPY) -r$/;"	m
+COPY_FILE	Makefile	/^COPY_FILE     = $(COPY)$/;"	m
+CPoints	points.cpp	/^CPoints::CPoints(QWidget* parent):QGLWidget(parent),m_IsReady(false)$/;"	f	class:CPoints
+CPoints	points.h	/^class CPoints : public QGLWidget$/;"	c
+CXX	Makefile	/^CXX           = g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT $(DEFINES)$/;"	m
+DEFINES	Makefile	/^DEFINES       = -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED$/;"	m
+DEL_DIR	Makefile	/^DEL_DIR       = rmdir$/;"	m
+DEL_FILE	Makefile	/^DEL_FILE      = rm -f$/;"	m
+DESTDIR	Makefile	/^DESTDIR       = $/;"	m
+DIST	Makefile	/^DIST          = \/usr\/share\/qt4\/mkspecs\/common\/g++.conf \\$/;"	m
+GEN_POINTS_H	gen_points.h	2;"	d
+INCPATH	Makefile	/^INCPATH       = -I\/usr\/share\/qt4\/mkspecs\/linux-g++ -I. -I\/usr\/include\/qt4\/QtCore -I\/usr\/include\/qt4\/QtGui -I\/usr\/include\/qt4\/QtOpenGL -I\/usr\/include\/qt4 -I. -I\/usr\/X11R6\/include -I.$/;"	m
+INSTALL_DIR	Makefile	/^INSTALL_DIR   = $(COPY_DIR)$/;"	m
+INSTALL_FILE	Makefile	/^INSTALL_FILE  = install -m 644 -p$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = install -m 755 -p$/;"	m
+LFLAGS	Makefile	/^LFLAGS        = -Wl,-O1$/;"	m
+LIBS	Makefile	/^LIBS          = $(SUBLIBS)  -L\/usr\/lib -L\/usr\/X11R6\/lib -lQtOpenGL -lQtGui -lQtCore -lGLU -lGL -lpthread $/;"	m
+LINK	Makefile	/^LINK          = g++$/;"	m
+MKDIR	Makefile	/^MKDIR         = mkdir -p$/;"	m
+MOVE	Makefile	/^MOVE          = mv -f$/;"	m
+N	gen_points.cpp	/^const int N = 2000;$/;"	v
+OBJECTS	Makefile	/^OBJECTS       = gen_points.o \\$/;"	m
+OBJECTS_DIR	Makefile	/^OBJECTS_DIR   = .\/$/;"	m
+POINTS_H	points.h	2;"	d
+QMAKE	Makefile	/^QMAKE         = \/usr\/bin\/qmake$/;"	m
+QMAKE_TARGET	Makefile	/^QMAKE_TARGET  = points$/;"	m
+RANLIB	Makefile	/^RANLIB        = $/;"	m
+SED	Makefile	/^SED           = sed$/;"	m
+SOURCES	Makefile	/^SOURCES       = gen_points.cpp \\$/;"	m
+STRIP	Makefile	/^STRIP         = strip$/;"	m
+SYMLINK	Makefile	/^SYMLINK       = ln -f -s$/;"	m
+TAR	Makefile	/^TAR           = tar -cf$/;"	m
+TARGET	Makefile	/^TARGET        = points$/;"	m
+draw	points.cpp	/^void CPoints::draw(){$/;"	f	class:CPoints
+f_max	gen_points.cpp	/^const double f_max = +5.0;$/;"	v
+f_min	gen_points.cpp	/^const double f_min = -5.0;$/;"	v
+generatePoints	gen_points.cpp	/^void CGenPoints::generatePoints(){$/;"	f	class:CGenPoints
+genrand	gen_points.cpp	/^float genrand(){$/;"	f
+getStaticMetaObject	moc_gen_points.cpp	/^const QMetaObject &CGenPoints::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:CGenPoints
+getStaticMetaObject	moc_points.cpp	/^const QMetaObject &CPoints::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:CPoints
+initializeGL	points.cpp	/^void CPoints::initializeGL()$/;"	f	class:CPoints
+m_IsReady	points.h	/^	bool m_IsReady;$/;"	m	class:CPoints
+m_px	gen_points.h	/^	std::vector<float> m_px;$/;"	m	class:CGenPoints
+m_px	points.h	/^	std::vector<float> m_px;$/;"	m	class:CPoints
+m_py	gen_points.h	/^	std::vector<float> m_py;$/;"	m	class:CGenPoints
+m_py	points.h	/^	std::vector<float> m_py;$/;"	m	class:CPoints
+m_pz	gen_points.h	/^	std::vector<float> m_pz;$/;"	m	class:CGenPoints
+m_pz	points.h	/^	std::vector<float> m_pz;$/;"	m	class:CPoints
+m_updateTimer	gen_points.h	/^	QTimer * m_updateTimer;$/;"	m	class:CGenPoints
+main	main.cpp	/^int main(int argc, char* argv[])$/;"	f
+metaObject	moc_gen_points.cpp	/^const QMetaObject *CGenPoints::metaObject() const$/;"	f	class:CGenPoints
+metaObject	moc_points.cpp	/^const QMetaObject *CPoints::metaObject() const$/;"	f	class:CPoints
+paintGL	points.cpp	/^void CPoints::paintGL()$/;"	f	class:CPoints
+qt_meta_data_CGenPoints	moc_gen_points.cpp	/^static const uint qt_meta_data_CGenPoints[] = {$/;"	v	file:
+qt_meta_data_CPoints	moc_points.cpp	/^static const uint qt_meta_data_CPoints[] = {$/;"	v	file:
+qt_meta_stringdata_CGenPoints	moc_gen_points.cpp	/^static const char qt_meta_stringdata_CGenPoints[] = {$/;"	v	file:
+qt_meta_stringdata_CPoints	moc_points.cpp	/^static const char qt_meta_stringdata_CPoints[] = {$/;"	v	file:
+qt_metacall	moc_gen_points.cpp	/^int CGenPoints::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:CGenPoints
+qt_metacall	moc_points.cpp	/^int CPoints::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:CPoints
+qt_metacast	moc_gen_points.cpp	/^void *CGenPoints::qt_metacast(const char *_clname)$/;"	f	class:CGenPoints
+qt_metacast	moc_points.cpp	/^void *CPoints::qt_metacast(const char *_clname)$/;"	f	class:CPoints
+recePoints	points.cpp	/^void CPoints::recePoints(float* px, float* py, float* pz, int n)$/;"	f	class:CPoints
+resizeGL	points.cpp	/^void CPoints::resizeGL(int width, int height)$/;"	f	class:CPoints
+sendpoints	moc_gen_points.cpp	/^void CGenPoints::sendpoints(float * _t1, float * _t2, float * _t3, int _t4)$/;"	f	class:CGenPoints
+start	gen_points.cpp	/^void CGenPoints::start(){$/;"	f	class:CGenPoints
+staticMetaObject	moc_gen_points.cpp	/^const QMetaObject CGenPoints::staticMetaObject = {$/;"	m	class:CGenPoints	file:
+staticMetaObject	moc_points.cpp	/^const QMetaObject CPoints::staticMetaObject = {$/;"	m	class:CPoints	file:
