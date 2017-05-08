@@ -1,0 +1,17 @@
+#Server setting
+#IP=10.100.203.78
+#PORT=8903
+[ADMIN_SERVER]
+IP=127.0.0.1
+PORT=8903
+TIMEOUT=5
+
+#Listener setting
+[LISTENER]
+PORT=9012
+TIMEOUT=5
+
+#SQLite Setting
+[DB]
+DBNAME=agentdb
+

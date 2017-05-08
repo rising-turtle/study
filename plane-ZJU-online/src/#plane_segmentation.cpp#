@@ -1,0 +1,194 @@
+#include "plane_segmentation.h" 
+
+#include <iostream>
+PlaneSegmentation::PlaneSegmentation()
+{
+	angularThreshold_= 0.97;       //��չ����ƽ�淨�����н�
+	distanceThreshold_= 0.1;      //��չ�㵽ƽ��ľ���
+	minPlaneCount_ = 100;           //����ƽ�����
+	minPlaneArea_ = 5;          //��Сƽ�����
+	maxVisDistance_ = 5;
+}
+PlaneSegmentation::~PlaneSegmentation()
+{
+}
+
+
+int PlaneSegmentation::segmentOrganized(float** cloud,float** normals,int width,int height,int classFlag[])
+{
+	//cloud:     input organized points cloud with size of 'width * height'   NOTICE:the unvalid point must be 1.QNAN
+ 	//normals:   input point normals. index must be consist to cloud
+	//classFlag: input buffer(the same size) to sign the point belong to which plane
+	//output:    the plane count.if no plane found ,it's 0
+
+	using namespace Eigen;
+	using namespace std;
+	//init
+	planeVector_.clear();
+	const int pointCount=width*height;
+	for(int i=0;i<pointCount;i++) 
+	{
+		if(   finite(cloud[i][0])
+			&& finite(cloud[i][1])
+			&& finite(cloud[i][2])
+		    && finite(normals[i][0])
+			&& finite(normals[i][1])
+			&& finite(normals[i][2])
+			&& cloud[i][2]<maxVisDistance_) 
+		{
+			classFlag[i]=0;
+		}
+		else  
+		{
+			classFlag[i]=-2;  //�ն� ����Ҫ��չ
+		}  
+	} 
+
+	//region growing
+	int ite=1; //������
+	for(int i=0;i<pointCount;i++)
+	{
+		vector<int> pointList;//ƽ��㼯��
+		PlaneModel plane;
+		int listIdx=0;  //���list��׼����һ��ƽ����չ
+		if(classFlag[i]==0)   //�ҵ�һ�����ӵ㣬��ʼһ���µ���չ
+		{
+			//��ʼ��ƽ��㼯 �������ӵ�
+			pointList.push_back(i); classFlag[i]=ite;  
+			//��ʼ��ƽ��ģ��
+			plane.centroid<<cloud[i][0]
+			             ,cloud[i][1]
+						 ,cloud[i][2];
+			plane.normal<<normals[i][0]
+			           ,normals[i][1]
+					   ,normals[i][2];
+			//�������ƽ��
+			while(listIdx != pointList.size())  
+			{
+				int currentPointIndex=pointList[listIdx]; //��ǰ�������
+				//if(currentPointIndex<640 || currentPointIndex%640==0 || currentPointIndex%640==639 || currentPointIndex>640*479){listIdx++; continue;}
+				//int neighborIndex[8]={  currentPointIndex-641,currentPointIndex-640,currentPointIndex-639,  //8��������
+				//						currentPointIndex-1,                        currentPointIndex+1,
+				//						currentPointIndex+639,currentPointIndex+640,currentPointIndex+641};
+				if(    currentPointIndex<width*2  
+					|| currentPointIndex>width*(height-2) 
+					|| currentPointIndex%width==0 
+					||  currentPointIndex%width==1 
+					|| (currentPointIndex+1)%width==0 
+					|| (currentPointIndex+2)%width==0)
+				{listIdx++; continue;}
+				int neighborIndex[24]={ currentPointIndex-width*2-2,currentPointIndex-width*2-1,currentPointIndex-width*2,currentPointIndex-width*2+1,currentPointIndex-width*2+2, 
+					                 currentPointIndex-width-2,  currentPointIndex-width-1,  currentPointIndex-width,  currentPointIndex-width+1,  currentPointIndex-width+2,                     //5*5��������
+					                 currentPointIndex-2,       currentPointIndex-1,                               currentPointIndex+1,       currentPointIndex+2,
+								 	 currentPointIndex+width-2,  currentPointIndex+width-1, currentPointIndex+width,  currentPointIndex+width+1,   currentPointIndex+width+2,
+									 currentPointIndex+width*2-2,currentPointIndex+width*2-1,currentPointIndex+width*2,currentPointIndex+width*2+1,currentPointIndex+width*2+2};
+				for(int j=0;j<24;j++) //���������İ뾶�ڵ���з������ж�  
+				{
+					//%%%����������pointList[listIdx]  ����չ������ neighborIndex[0,1,2,3,4,5,6,7] 
+					//condition 1:������Ѿ��жϹ�ĵ����Ч�� �Ͳ���Ҫ���ж���
+					if(classFlag[neighborIndex[j]] != 0) {continue;}  
+					//condition 2:�����жϣ��ͷ������ж�
+					Vector3d nPoint,cPoint;
+					nPoint<<normals[neighborIndex[j]][0],   //��չ��ķ�����
+						   normals[neighborIndex[j]][1],
+						   normals[neighborIndex[j]][2];
+					cPoint<<cloud[neighborIndex[j]][0],
+						   cloud[neighborIndex[j]][1],
+						   cloud[neighborIndex[j]][2];
+					double distanceP = (plane.normal.dot(cPoint)-plane.normal.dot(plane.centroid))/plane.normal.norm();
+					if(distanceP>distanceThreshold_){continue;}
+					//condition 3:�������ж�
+					if(plane.normal.dot(nPoint)/(plane.normal.norm()*nPoint.norm())>angularThreshold_)
+					{
+						//�ɹ���չ��ѡ��  ����ƽ�漯�Ϻ�ƽ��ģ��
+						pointList.push_back(neighborIndex[j]);
+						classFlag[neighborIndex[j]]=ite;
+						//����ƽ������
+						plane.centroid = (plane.centroid*(pointList.size()-1)+cPoint)/pointList.size();
+						//����ƽ�淨����
+						plane.normal = (plane.normal*(pointList.size()-1)+nPoint)/pointList.size();
+					}
+					/////////////////////////////////////////////////////////////////////////////////////////////////////////
+				}
+				listIdx++;  //���listIdx�������������Ѿ���չ����
+			}//end of if  ��չ���pointList[listIdx]�������	
+		}
+
+		//������չ���ƽ������ж�///////////////////////////////
+		//����1 ��������̫�٣����������ȫ��д�����
+		if(pointList.size()<minPlaneCount_)
+		{
+			for(int k=0;k<pointList.size();k++)
+			{classFlag[pointList[k]]=-1;}
+		}
+		else
+		{
+			double area=0;
+			for(int j=0;j<pointList.size();j++)
+			{
+				double x = cloud[pointList[j]][2];
+				area+=0.003*x*x-0.00034*x+0.000328;
+			}
+			if(area>minPlaneArea_/* && abs(plane.normal.dot(groundNormal))/(plane.normal.norm()*groundNormal.norm())>0.85*/)
+			{ite++;planeVector_.push_back(plane);}
+			else
+			{for(int k=0;k<pointList.size();k++){classFlag[pointList[k]]=-1;}}
+
+		}
+		/////////////////////////////////////////////////////////
+	}
+
+
+	for(int i=0;i<pointCount;i++)
+	{
+		classFlag[i]--;
+	}
+
+	int planeCount = planeVector_.size();
+	return planeCount;
+}
+
+void PlaneSegmentation::gettPlaneModel(std::vector<double> modelEquition[4])
+{
+	//using namespace std;
+	//using namespace Eigen;
+	for(int i=0;i<planeVector_.size();i++)
+	{
+		double a,b,c,d;
+		a = planeVector_[i].normal[0];
+		b = planeVector_[i].normal[1];
+		c = planeVector_[i].normal[2];
+		d = -planeVector_[i].normal.dot(planeVector_[i].centroid);
+		
+		modelEquition[0].push_back(a);
+		modelEquition[1].push_back(b);
+		modelEquition[2].push_back(c);
+		modelEquition[3].push_back(d);
+	}
+
+}
+
+//int PlaneSegmentation::downSample(double dataIn[][3],double dataOut[][3],const int width,const int height,const int downStep)
+//{
+//	if(downStep!=1 && downStep!=2 && downStep!=4 && downStep!=8)
+//	{
+//		std::cout<<"DownSample Step must be 1,2,4,8 only."<<std::endl;
+//		return -1;
+//	}
+//	const int outWidth = (int)width/downStep;
+//	const int outHeight = (int)height/downStep;
+//
+//	for(int i=0,ii=0;i<height;i+=downStep,ii++)
+//	{
+//		for(int j=0,jj=0;j<width;j+=downStep,jj++)
+//		{
+//			int inIdx = i*width+j;
+//			int outIdx = ii*outWidth+jj;
+//			dataOut[outIdx][0]=dataIn[inIdx][0];	
+//			dataOut[outIdx][1]=dataIn[inIdx][1];	
+//			dataOut[outIdx][2]=dataIn[inIdx][2];	
+//		}
+//	}
+//
+//	return outWidth * outHeight;
+//}

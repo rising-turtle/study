@@ -1,0 +1,71 @@
+%% Initialization
+clear ; close all; clc
+
+% x = [3312 6432 7224 7896 12288 15216 17664 17736 18048]';
+% s = [0.9573 0.8963 0.8310 0.7657 0.6873 0.6089 0.5305 0.4207 0.3110]';
+% y1 = log(-log(s));
+ 
+ 
+t = [27 32 36 42 49]';
+F = [0.1296 0.3148 0.5 0.6852 0.8704]';
+r = 1 - F;
+y1 = log(-log(r));
+
+% multiples to calculate theta2 and theta3 
+syms a b e1 e2
+x = log(t);
+% f = (y1(1)-(x(1)-a)*b)^2+(y1(2)-(x(2)-a)*b)^2+(y1(3)-(x(3)-a)*b)^2+(y1(4)-(x(4)-a)*b)^2+(y1(5)-(x(5)-a)*b)^2+(y1(6)-(x(6)-a)*b)^2+(y1(7)-(x(7)-a)*b)^2+(y1(8)-(x(8)-a)*b)^2+(y1(9)-(x(9)-a)*b)^2;
+f = (y1(1)-(x(1)-a)*b)^2+(y1(2)-(x(2)-a)*b)^2+ ...
+    (y1(3)-(x(3)-a)*b)^2+(y1(4)-(x(4)-a)*b)^2+(y1(5)-(x(5)-a)*b)^2;
+
+%f = (y1-(log(x)-a).*b)*(y1-(log(x) - a).*b);
+% f = f'*f;
+e1 = diff(f, a);
+e2 = diff(f, b);
+display(e1);
+display(e2)
+%%
+[aa bb] = solve(e1, e2, 'a', 'b');
+display(aa);
+display(bb);
+% 
+ fm = 0;
+ fn = 0;
+for i=1:size(aa)
+    fn = subs(aa(i));
+    fm = subs(bb(i));
+    if fm ~= 0 && fn ~= 0
+        break;
+    end
+end
+fn = exp(fn);
+
+fprintf('fm = %f fn = %f \n', fm, fn);
+% Initial guess for theta theta1(1) t0 theta(2) m theta(3) 
+last_delta = -1; 
+cur_delta = 0;
+for t0 = 10:1:26
+theta1 = [t0 fm fn]';
+
+% Some gradient descent settings
+iterations = 10000; %15000;
+alpha = 1.;
+theta2 = gradientDescentMulti3(t, y1, theta1, alpha, iterations);
+cur_delta = computeCost2(t, r, theta2); 
+if last_delta == -1 || last_delta > cur_delta
+    last_delta = cur_delta;
+    fm = theta2(2);
+    fn = theta2(3);
+end 
+fprintf('ini_t0 = %f t0 = %f m = %f theta3 = %f cost= %f \n', ...
+    t0, theta2(1), theta2(2), theta2(3), computeCost2(t, r, theta2));
+end
+
+% compare to standard theta
+theta_standard = [20.2395 1.8486 19.69];
+fprintf('theta_standard: t0 = %f m = %f theta3 = %f cost= %f \n',...
+    theta_standard(1), theta_standard(2), theta_standard(3), computeCost2(t, r, theta_standard));
+
+% 
+% theta = [20.2395 1.8486 19.69]
+
