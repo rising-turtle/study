@@ -1,0 +1,1 @@
+/home/davidz/work/github/stereo_match/build/CMakeFiles/test_match.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -msse3 -O3 -DNDEBUG   -shared -Wl,-soname,libstereo.so -o ../libstereo.so CMakeFiles/stereo.dir/src/descriptor.cpp.o CMakeFiles/stereo.dir/src/elas.cpp.o CMakeFiles/stereo.dir/src/filter.cpp.o CMakeFiles/stereo.dir/src/matrix.cpp.o CMakeFiles/stereo.dir/src/triangle.cpp.o CMakeFiles/stereo.dir/src/main.cpp.o 

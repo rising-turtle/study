@@ -1,0 +1,22 @@
+﻿Build started 4/3/2017 5:04:23 PM.
+     1>Project "D:\3rdlibs\libelas\build_vs9\elas.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "elas.dir\Debug\elas.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         All outputs are up-to-date.
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "elas.dir\Debug\elas.unsuccessfulbuild".
+         Touching "elas.dir\Debug\elas.lastbuildstate".
+     1>Done Building Project "D:\3rdlibs\libelas\build_vs9\elas.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.17

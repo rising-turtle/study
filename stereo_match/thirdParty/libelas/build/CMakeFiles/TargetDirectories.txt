@@ -1,0 +1,2 @@
+/home/davidz/work/github/stereo_match/thirdParty/libelas/build/CMakeFiles/elas.dir
+/home/davidz/work/github/stereo_match/thirdParty/libelas/build/CMakeFiles/stereo.dir
