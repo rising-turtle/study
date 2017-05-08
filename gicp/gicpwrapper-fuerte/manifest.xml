@@ -1,0 +1,16 @@
+<package>
+  <description brief="gicpwrapper">
+
+     gicpwrapper
+
+  </description>
+  <author>DavidZ</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gicpwrapper</url>
+  <depend package="roscpp"/>
+  <depend package="sensor_msgs"/>
+
+</package>
+
+
