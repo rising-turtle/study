@@ -1,0 +1,5 @@
+Author David Z, 
+
+try to read and write video with images using opencv library
+However, in linux, opencv function cannot fetch the raw image data before compressing into video stream
+
