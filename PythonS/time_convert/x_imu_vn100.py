@@ -29,6 +29,20 @@ class Time:
         return cls(sec, nanosec)
     def tostr(self):
         return (str(self.sec) + '.' + str(self.nano_sec).zfill(9))
+    def subTime(self, T):
+        self.subSec(T.sec)
+        self.subNanoSec(T.nano_sec)
+    def subSec(self, sec):
+        self.sec -= sec
+    def subNanoSec(self, nanosec):
+        if self.nano_sec < nanosec:
+            self.nano_sec = self.nano_sec + Time.NANO_MAX - nanosec
+            self.sec -= 1
+        else:
+            self.nano_sec -= nanosec
+    def addTime(self, T):
+        self.addSec(T.sec)
+        self.addNanoSec(T.nano_sec)
     def addSec(self, sec):
         self.sec += sec
     def addNanoSec(self, nanosec):
