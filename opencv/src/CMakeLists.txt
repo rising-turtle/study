@@ -16,3 +16,6 @@ message("STATUS OpenCV_INCLUDE_DIRS : ${OpenCV_INCLUDE_DIRS}")
 
 add_executable(undistort_camK undistort_cam_K.cpp)
 target_link_libraries(undistort_camK ${OpenCV_LIBS})
+
+add_executable(klt_tracker tracker.cpp)
+target_link_libraries(klt_tracker ${OpenCV_LIBS})
