@@ -33,12 +33,18 @@ MSG(PATH)
 # 5, 6, 7 system paths
 MSG(CMAKE_SYSTEM_PREFIX_PATH CMAKE_SYSTEM_FRAMEWORK_PATH CMAKE_SYSTEM_APPBUNDLE_PATH)
 
+# find_package(Ceres QUIET)
+
+# try to add a new prefix path for find_package
+# set(CMAKE_PREFIX_PATH "/home/davidz/work/3rdlibs/okvis/build;${CMAKE_PREFIX_PATH}")
+# MSG(CMAKE_PREFIX_PATH)
+
 find_package(Ceres REQUIRED)
 
 message(STATUS "CERES_INCLUDE_DIRS: ${CERES_INCLUDE_DIRS}")
 message(STATUS "CERES_LIBRARIES: ${CERES_LIBRARIES}")
 
-find_package(Qt4 REQUIRED)
-MSG(Qt4_FOUND)
+# find_package(Qt4 REQUIRED)
+# MSG(Qt4_FOUND)
 
 
