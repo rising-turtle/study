@@ -1,8 +1,14 @@
+project(cmake_test)
 
 cmake_minimum_required(VERSION 3.9)
 
 # macros e.g. MSG 
 include(macro.cmake)
+include(opencv_test.cmake)
+
+add_executable(opencv_test src/opencv_test.cpp)
+target_link_libraries(opencv_test ${OpenCV_LIBS})
+
 
 # message(STATUS "CMAKE_CURRENT_LIST_FILE : ${CMAKE_CURRENT_LIST_FILE}")
 # message(STATUS "PATH: ${PATH}")
@@ -11,27 +17,27 @@ include(macro.cmake)
 
 # message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}" "What1" ${ARGN})
 
-MSG(CMAKE_MODULE_PATH)
+# MSG(CMAKE_MODULE_PATH)
 # a function test for ARGN, ARGC, ARGV, ARGV0, ARGV1
-#include(function_argument.cmake)
+# include(function_argument.cmake)
 
 # get_filename_component(CMAKE_CURRENT_PATH "${CMAKE_CURRENT_LIST_FILE}/" REALPATH)
-get_filename_component(CMAKE_CURRENT_PATH "${CMAKE_CURRENT_LIST_FILE}/" PATH)
-MSG(CMAKE_CURRENT_PATH CMAKE_CURRENT_LIST_FILE)
+# get_filename_component(CMAKE_CURRENT_PATH "${CMAKE_CURRENT_LIST_FILE}/" PATH)
+# MSG(CMAKE_CURRENT_PATH CMAKE_CURRENT_LIST_FILE)
 
 # CMake search sequence 
 # 1. CMAKE_PATH, these variables can be specified by -DVAL=val
-MSG(CMAKE_PREFIX_PATH CMAKE_FRAMEWORK_PATH CMAKE_APPBUNDLE_PATH)
+# MSG(CMAKE_PREFIX_PATH CMAKE_FRAMEWORK_PATH CMAKE_APPBUNDLE_PATH)
 
 # 2. <package_DIR>
-MSG(Ceres_DIR CMAKE)
+# MSG(Ceres_DIR CMAKE)
 
 # 3. HINTS PATH1 [PATH2 ... ] or PATHS PATH1 [PATH2 ...]
 # 4. System environment variables 
-MSG(PATH)
+# MSG(PATH)
 
 # 5, 6, 7 system paths
-MSG(CMAKE_SYSTEM_PREFIX_PATH CMAKE_SYSTEM_FRAMEWORK_PATH CMAKE_SYSTEM_APPBUNDLE_PATH)
+# MSG(CMAKE_SYSTEM_PREFIX_PATH CMAKE_SYSTEM_FRAMEWORK_PATH CMAKE_SYSTEM_APPBUNDLE_PATH)
 
 # find_package(Ceres QUIET)
 
@@ -39,10 +45,11 @@ MSG(CMAKE_SYSTEM_PREFIX_PATH CMAKE_SYSTEM_FRAMEWORK_PATH CMAKE_SYSTEM_APPBUNDLE_
 # set(CMAKE_PREFIX_PATH "/home/davidz/work/3rdlibs/okvis/build;${CMAKE_PREFIX_PATH}")
 # MSG(CMAKE_PREFIX_PATH)
 
-find_package(Ceres REQUIRED)
+# find_package(Ceres REQUIRED)
 
-message(STATUS "CERES_INCLUDE_DIRS: ${CERES_INCLUDE_DIRS}")
-message(STATUS "CERES_LIBRARIES: ${CERES_LIBRARIES}")
+# message(STATUS "CERES_INCLUDE_DIRS: ${CERES_INCLUDE_DIRS}")
+# message(STATUS "CERES_LIBRARIES: ${CERES_LIBRARIES}")
+
 
 # find_package(Qt4 REQUIRED)
 # MSG(Qt4_FOUND)
