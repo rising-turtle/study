@@ -19,9 +19,9 @@ double sinc(double x)
 int main(int argc, char* argv[])
 {
     double psi, phi, theta; 
-    psi = D2R(15); 
-    phi = D2R(30); 
-    theta = D2R(30); 
+    psi = D2R(28.7); 
+    phi = D2R(10.3); 
+    theta = D2R(41.2); 
     Eigen::Matrix<double, 3,3> Rw2u; 
     double cpsi = cos(psi);  double spsi = sin(psi); 
     double cphi = cos(phi);  double sphi = sin(phi); 
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 	    spsi*cphi + cpsi*stheta*sphi,  cpsi*ctheta, spsi*sphi - cpsi*stheta*cphi,
 	    -ctheta*sphi,		   stheta,	ctheta*cphi; 
     Eigen::Matrix<double, 3,3> Ru2w = Rw2u.inverse(); 
-    Eigen::Vector3d g(0, 0, -9.801);
+    Eigen::Vector3d g(0, 0, -9.81);
     Eigen::Vector3d a = Ru2w * g;
     cout <<"Rw2u: "<<endl<<Rw2u<<endl; 
     cout <<"Ru2w: "<<endl<<Ru2w<<endl;
@@ -89,6 +89,8 @@ int main(int argc, char* argv[])
     Eigen::Vector3d g4 = R_inv * a; 
     cout <<"R_inv: "<<R_inv<<endl; 
     cout <<"g4: "<<g4<<endl; 
+
+    // 
 
     return 1;
 }
