@@ -14,8 +14,13 @@ message("STATUS OpenCV_INCLUDE_DIRS : ${OpenCV_INCLUDE_DIRS}")
 # add_executable(rw_video video_read_write.cpp)
 # target_link_libraries(rw_video ${OpenCV_LIBS})
 
+link_libraries(${OpenCV_LIBS})
+
 add_executable(undistort_camK undistort_cam_K.cpp)
 target_link_libraries(undistort_camK ${OpenCV_LIBS})
 
 add_executable(klt_tracker tracker.cpp)
 target_link_libraries(klt_tracker ${OpenCV_LIBS})
+
+add_executable(detect_harris detec_harris.cpp)
+
