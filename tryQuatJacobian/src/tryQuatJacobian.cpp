@@ -15,10 +15,13 @@ void test();
 
 void test2();
 
+void test_dR1_dw(); 
+
 int main()
 {
     test();
     // test2();
+    test_dR1_dw(); 
     return 1;
 }
 
@@ -71,6 +74,56 @@ void test2()
     cout <<"QQ.R: "<<endl<<QQ.toRotationMatrix()<<endl;
     cout <<"QQQ: "<<QQQ<<endl; 
     cout <<"QQQ.R: "<<endl<<QQQ.toRotationMatrix()<<endl;
+}
+
+void test_dR1_dw()
+{
+    double eps = 1e-3; // 1e-6 
+    double qx = 0.1 ; // 0.1; 
+    double qy = -0.2; // -0.2; 
+    double qz = 0.5; // 0.5; 
+    double qw = sqrt(1 - qx*qx - qy*qy - qz*qz); 
+    Eigen::Quaterniond Q(qw, qx, qy, qz); 
+    Eigen::Vector3d pi(1, 2, 3); 
+
+    Eigen::Matrix3d R = Q.toRotationMatrix(); 
+
+    Eigen::Vector3d pj = Q * pi; 
+    cout <<"pj: "<<endl<<pj<<endl; 
+    Eigen::Vector3d pj2 = R * pi; 
+    cout <<"pj2: "<<endl<<pj2<<endl; 
+    // Eigen::Matrix<double, 3, 3> num_jacobians; 
+    Eigen::Matrix<double, 1, 3> num_jacobians; 
+    double px = R.row(0) * pi; 
+
+    for(int k=0; k<3; k++)
+    {
+	Eigen::Vector3d delta = Eigen::Vector3d(k == 0, k==1, k==2)*eps; 
+	
+	Eigen::Quaterniond Q2 = Q * Utility::deltaQ(delta); 
+	// Eigen::Quaterniond Q2 = Q * deltaQ2(delta); 
+	// Eigen::Quaterniond Q2 = deltaQ3(Q, delta); 
+
+	// Eigen::Vector3d p2 = Q2 * pi;
+	Eigen::Matrix3d R = Q2.toRotationMatrix(); 
+	double p2 = R.row(0) * pi; 
+
+	// Eigen::Vector3d p3 = Q2 * pi; 
+	// cout <<"p2: "<<endl<<p2<<endl;
+	// cout <<"p3: "<<endl<<p3<<endl; 
+	// num_jacobians.col(k) = (p2 - pj)/eps; 
+	num_jacobians(k) = (p2-px)/eps; 
+    }
+    
+    cout <<"numerical_jacobian: "<<endl<<num_jacobians<<endl;
+
+    Eigen::Matrix<double, 3, 3> jacobians = -R * Utility::skewSymmetric(pi); 
+    cout <<"d[Rp]/dw = -R*[p] "<<endl<<jacobians<<endl; 
+    Eigen::Matrix<double, 1, 3> R1_jacob = -R.row(0) * Utility::skewSymmetric(pi); 
+    cout <<"d[R1p]/dw = -R1*[p]: "<<endl<<R1_jacob<<endl;
+
+    return ; 
+
 }
 
 void test()
