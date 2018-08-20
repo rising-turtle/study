@@ -1,6 +1,7 @@
 /*
     try to verify the jacobians using quaternion 
     specifically, check d[Rp]/dw and d[R'p]/dw, w is the angular velocity in the tangent space of R
+    check d[q1.inv() * q2]/dq1 and d[q1.inv() * q2]/dq2 
 */
 
 #include <iostream>
@@ -10,20 +11,6 @@
 #include "so3.hpp"
 
 using namespace std; 
-
-void test(); 
-
-void test2();
-
-void test_dR1_dw(); 
-
-int main()
-{
-    test();
-    // test2();
-    test_dR1_dw(); 
-    return 1;
-}
 
 template<typename T>
 Eigen::Quaternion<typename T::Scalar> deltaQ2(const Eigen::MatrixBase<T>& w)
@@ -51,11 +38,88 @@ Eigen::Quaterniond deltaQ3(Eigen::Quaterniond& Q, Eigen::Matrix<double, 3, 1>& w
     Eigen::Quaterniond q(R2); 
     return q; 
 }
-
 std::ostream& operator<<(std::ostream& out, const Eigen::Quaterniond& q)
 {
     out << q.x()<<" "<<q.y()<<" "<<q.z() <<" "<<q.w(); 
     return out; 
+}
+
+void test(); 
+
+void test2();
+
+void test_dR1_dw(); 
+
+void test_dq1q2(); 
+
+int main()
+{
+    // test();
+    // test2();
+    // test_dR1_dw(); 
+    test_dq1q2(); 
+    return 1;
+}
+
+void test_dq1q2()
+{
+    double eps= 1e-3; 
+    double qx = 0.1 ; // 0.1; 
+    double qy = -0.2; // -0.2; 
+    double qz = 0.5; // 0.5; 
+    double qw = sqrt(1 - qx*qx - qy*qy - qz*qz); 
+    Eigen::Quaterniond Q1(qw, qx, qy, qz); 
+    qy = 0.3; qz = -0.15; 
+    qw = sqrt(1 - qx*qx - qy*qy - qz*qz); 
+    Eigen::Quaterniond Q2(qw, qx, qy, qz); 
+    Eigen::Quaterniond Q3 = (Q1.inverse()*Q2).normalized(); 
+    cout <<"Q3 "<<Q3<<endl;
+    Eigen::Matrix<double, 3, 3> num_jacobians; 
+
+    for(int k=0; k<3; k++)
+    {
+	Eigen::Vector3d delta_q1 = Eigen::Vector3d(k == 0, k==1, k==2)*eps; 
+
+	Eigen::Quaterniond Q11 = Q1 * Utility::deltaQ(delta_q1); 
+	Eigen::Quaterniond Q33 = Q11.inverse() * Q2; 
+	Eigen::Quaterniond delta_q3 = Q3.inverse()*Q33;
+	Eigen::Vector3d delta;
+	delta(0) = delta_q3.x()*2.; 
+	delta(1) = delta_q3.y()*2.;
+	delta(2) = delta_q3.z()*2.; 
+	num_jacobians.col(k) = delta/eps; 
+    }
+
+    cout <<"numerical_jacobian: "<<endl<<num_jacobians<<endl;
+    Eigen::Matrix<double, 3, 3> est_jacobians; 
+
+    // est_jacobians = -0.5 *(Utility::Qleft(Q2.inverse()) * Utility::Qright(Q1)).bottomRightCorner<3,3>(); 
+    // est_jacobians = - 0.5 * (Utility::Qleft(Q2.inverse() * Q1)).bottomRightCorner<3,3>(); 
+    Eigen::Matrix<double, 3, 3> R3 =  Q3.toRotationMatrix(); 
+    est_jacobians = -R3.transpose(); 
+    cout<<" est_jacobian: "<<endl<<est_jacobians<<endl; 
+
+    Eigen::Vector3d delta_q1(0.01, -0.02, 0.03);
+    {
+	Eigen::Quaterniond Q11 = Q1 * Utility::deltaQ(delta_q1); 
+	Eigen::Quaterniond Q33 = Q11.inverse() * Q2; 
+	cout <<"expected Q33: "<<endl<<Q33<<endl; 
+    }
+    {
+	Eigen::Vector3d delta_3 = num_jacobians * delta_q1; 
+	Eigen::Quaterniond Q33 = Q3 * Utility::deltaQ(delta_3); 
+	cout<<"numeric jacobians Q33: "<<endl<<Q33<<endl; 
+    }
+    {
+	Eigen::Vector3d delta_3 = est_jacobians * delta_q1; 
+	// Eigen::Matrix<double ,3,3> T = ((Utility::Qleft(Q3)) * Utility::deltaQ(delta_3)).bottomRightCorner<3,3>() ;
+	Eigen::Quaterniond Q33 = Q3 * Utility::deltaQ(delta_3); 
+	cout<<"est jacobians Q33: "<<endl<<Q33<<endl; 
+    }
+	
+
+
+    return ;
 }
 
 void test2()
