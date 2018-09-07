@@ -24,3 +24,5 @@ target_link_libraries(klt_tracker ${OpenCV_LIBS})
 
 add_executable(detect_harris detec_harris.cpp)
 
+add_executable(yaml_reader yaml_reader.cpp)
+target_link_libraries(yaml_reader ${OpenCV_LIBS})
