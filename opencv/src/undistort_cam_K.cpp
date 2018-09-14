@@ -18,7 +18,75 @@
 using namespace std;
 using namespace cv;
 
-int main()
+void undist_tum_vio(int argc, char* argv[]); 
+
+void test_getNewCamMatrix(); 
+template<typename T>
+void printMat(cv::Mat& m, string prefix="")
+{
+    cout<<prefix<<endl;
+    for(int r=0; r<m.rows; r++)
+    {
+	for(int c=0; c<m.cols; c++)
+	{
+	    cout<<m.at<T>(r,c)<<" ";
+	}
+	cout<<endl;
+    }
+}
+
+int main(int argc, char* argv[])
+{
+    undist_tum_vio(argc, argv); 
+    // test_getNewCamMatrix(); 
+    return 0; 
+}
+
+
+void undist_tum_vio(int argc, char* argv[])
+{
+    if(argc < 2)
+    {
+	cout<<"usage: ./* + *.[png]"<<endl; 
+	return; 
+    }
+    cv::Mat img0 = cv::imread(argv[1], -1); 
+    cv::Mat img1; 
+    cv::Mat map1, map2; 
+    cv::Mat K = cv::Mat::eye(3,3,CV_32F); 
+    K.at<float>(0,0) = 190.9785; // fx;
+    K.at<float>(1,1) = 190.9733; // fy;
+    K.at<float>(0,2) = 254.9317; // cx;
+    K.at<float>(1,2) = 256.8974; // cy;
+
+    cv::Mat DistCoef(5,1,CV_32F);
+    DistCoef.at<float>(0) = -0.239552 ; // -0.2847798; // fSettings["Camera.k1"];
+    DistCoef.at<float>(1) = 0.037056;  // 0.08245052; // fSettings["Camera.k2"];
+    DistCoef.at<float>(2) = 3.5763956e-6; // -1.0946156e-6 ; // fSettings["Camera.p1"];
+    DistCoef.at<float>(3) = -1.4032145e-5; // 4.78701072e-6;  // fSettings["Camera.p2"];
+    DistCoef.at<float>(4) = 0.;// -0.0104085; //k3;
+    
+    // cv::Mat newK = cv::Mat::eye(3,3,CV_32F); 
+    cv::Mat newK; 
+    cv::Size image_size(512, 512);
+    printMat<float>(K, "oldK");
+    cv::initUndistortRectifyMap(K, DistCoef,
+                              cv::Mat(), newK, image_size,
+                              CV_8UC1, map1, map2);
+    cv::remap(img0, img1, map1, map2, cv::INTER_LINEAR,
+	    cv::BORDER_CONSTANT, cv::Scalar());
+    printMat<float>(newK, "newK"); 
+    cv::Mat optK = cv::getOptimalNewCameraMatrix(K, DistCoef, image_size, 0, image_size, 0, false); 
+    printMat<float>(optK, "optK"); 
+
+    cv::imshow("undistorted img", img1); 
+    cv::waitKey(0); 
+    
+    return ; 
+}
+
+
+void test_getNewCamMatrix()
 {
   // Brown–Conrady model 
   cv::Mat distCoeffs = cv::Mat::zeros(4, 1, CV_32F);
@@ -41,6 +109,5 @@ int main()
     <<"fy: "<<K.at<double>(1,1)<<endl
     <<"cx: "<<K.at<double>(0,2)<<endl
     <<"cy: "<<K.at<double>(1,2)<<endl;
-
-  return 0; 
 }
+
