@@ -71,11 +71,11 @@ void undist_tum_vio(int argc, char* argv[])
     cv::Size image_size(512, 512);
     printMat<float>(K, "oldK");
     cv::initUndistortRectifyMap(K, DistCoef,
-                              cv::Mat(), newK, image_size,
+                              cv::Mat(), K, image_size,
                               CV_8UC1, map1, map2);
     cv::remap(img0, img1, map1, map2, cv::INTER_LINEAR,
 	    cv::BORDER_CONSTANT, cv::Scalar());
-    printMat<float>(newK, "newK"); 
+    printMat<float>(K, "newK"); 
     cv::Mat optK = cv::getOptimalNewCameraMatrix(K, DistCoef, image_size, 0, image_size, 0, false); 
     printMat<float>(optK, "optK"); 
 
