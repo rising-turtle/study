@@ -16,12 +16,12 @@ endmacro()
 
 set(OpenCV_DIR "/home/davidz/work/3rdlibs/opencv/build")
 
-find_package(OpenCV 3.4 REQUIRED)
+find_package(OpenCV REQUIRED)
 
 message("OpenCV_LIBS: ${OpenCV_LIBS}")
 
 set(LIB_DIR "${OpenCV_DIR}/lib")
-set(VERSION_STR "3.4")
+set(VERSION_STR "3.3.1")
 set(MODULES ${OpenCV_LIBS})
 FIND_OpenCV(${LIB_DIR} ${VERSION_STR} ${MODULES})
 

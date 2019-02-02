@@ -1,6 +1,6 @@
 project(cmake_test)
 
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.0)
 
 # macros e.g. MSG 
 include(macro.cmake)
@@ -53,5 +53,24 @@ target_link_libraries(opencv_test ${OpenCV_LIBS})
 
 # find_package(Qt4 REQUIRED)
 # MSG(Qt4_FOUND)
+
+set(PCL_DIR "/home/davidz/work/3rdlib/3rdParty_PCL-1.8/build")
+# find_package(PCL REQUIRED)
+
+# include_directories(${PCL_INCLUDE_DIRS})
+# message("STATUS PCL_LIBRARY : ${PCL_LIBRARY}")
+# message("STATUS PCL_LIBRARIES: ${PCL_LIBRARIES}")
+# message("STATUS PCL_LIBRARY_DIRS: ${PCL_LIBRARY_DIRS}")
+set(PCL_LIBRARY_DIRS "${PCL_DIR}/lib")
+# link_directories(${PCL_LIBRARY_DIRS})
+set(PCL_LIBS_1 pcl_common pcl_io pcl_kdtree pcl_visualization pcl_filters pcl_segmentation pcl_search pcl_surface pcl_features)
+MSG(${PCL_LIBS_1})
+set(PCL_LIBS "")
+foreach(__msg ${PCL_LIBS_1})
+    set(PCL_MODULE_LIB "${PCL_LIBRARY_DIRS}/lib${__msg}.so")
+    list(APPEND PCL_LIBS "${PCL_MODULE_LIB}")
+endforeach()
+MSG(${PCL_LIBS})
+
 
 
