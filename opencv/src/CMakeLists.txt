@@ -19,10 +19,14 @@ link_libraries(${OpenCV_LIBS})
 add_executable(undistort_camK undistort_cam_K.cpp)
 target_link_libraries(undistort_camK ${OpenCV_LIBS})
 
-add_executable(klt_tracker tracker.cpp)
-target_link_libraries(klt_tracker ${OpenCV_LIBS})
+# add_executable(klt_tracker tracker.cpp)
+# target_link_libraries(klt_tracker ${OpenCV_LIBS})
 
 add_executable(detect_harris detec_harris.cpp)
 
 add_executable(yaml_reader yaml_reader.cpp)
 target_link_libraries(yaml_reader ${OpenCV_LIBS})
+
+add_executable(test_convertTo test_convertTo.cpp)
+target_link_libraries(test_convertTo ${OpenCV_LIBS})
+
