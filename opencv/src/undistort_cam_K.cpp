@@ -52,6 +52,7 @@ void undist_tum_vio(int argc, char* argv[])
     }
     cv::Mat img0 = cv::imread(argv[1], -1); 
     cv::Mat img1; 
+    cv::Mat img2; 
     cv::Mat map1, map2; 
     cv::Mat K = cv::Mat::eye(3,3,CV_32F); 
     K.at<float>(0,0) = 190.9785; // fx;
@@ -70,16 +71,26 @@ void undist_tum_vio(int argc, char* argv[])
     cv::Mat newK; 
     cv::Size image_size(512, 512);
     printMat<float>(K, "oldK");
-    cv::initUndistortRectifyMap(K, DistCoef,
-                              cv::Mat(), K, image_size,
-                              CV_8UC1, map1, map2);
-    cv::remap(img0, img1, map1, map2, cv::INTER_LINEAR,
-	    cv::BORDER_CONSTANT, cv::Scalar());
-    printMat<float>(K, "newK"); 
-    cv::Mat optK = cv::getOptimalNewCameraMatrix(K, DistCoef, image_size, 0, image_size, 0, false); 
-    printMat<float>(optK, "optK"); 
 
-    cv::imshow("undistorted img", img1); 
+    // adjust camera matrix according to the scale parameters alpha \in [0, 1] 
+    cv::Mat optK = cv::getOptimalNewCameraMatrix(K, DistCoef, image_size, 0.5, image_size, 0, false); 
+
+   //  cv::initUndistortRectifyMap(K, DistCoef,
+   //                           cv::Mat(), K, image_size,
+   //                           CV_8UC1, map1, map2);
+   // cv::remap(img0, img1, map1, map2, cv::INTER_LINEAR,
+//	    cv::BORDER_CONSTANT, cv::Scalar());
+
+    printMat<float>(K, "newK"); 
+    printMat<float>(optK, "optK"); 
+    
+    cv::undistort(img0, img1, K, DistCoef, optK);
+    cv::undistort(img0, img2, K, DistCoef); // default means K, the new image is based on K only
+    
+    cv::imshow("undistorted img default", img2); 
+    cv::waitKey(0); 
+
+    cv::imshow("undistorted img using optK", img1); 
     cv::waitKey(0); 
     
     return ; 
