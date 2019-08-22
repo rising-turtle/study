@@ -21,7 +21,61 @@ void test2();
 
 int main()
 {
-  test2();
+  // test2();
+
+    Eigen::Matrix4f Tc2u, Td2c, Td2u, Tu2c, Tu2d; 
+    
+
+    Td2c << 0.999958, -0.00764741, 0.00501189, 0.0209042,
+	    0.00772149, 0.999859, -0.0149321, -8.10772e-05,
+	    -0.00489699, 0.0149701, 0.999876, -0.00251056,
+	    0, 0, 0, 1;
+    
+    Tu2c << 0.00296942, -0.999987, 0.0041788, -0.00811792,
+	    -0.999995, -0.00296427, 0.00123819, 0.0148996,
+	    -0.00122579, -0.00418246, -0.999991, -0.0110856,
+	    0, 0, 0, 1;
+    
+    Tu2d << -0.00497627, -0.999801, 0.0193126, -0.00798526,
+	    -0.999987, 0.00495952, -0.000915181, -0.00600737,
+	    0.000819217, -0.0193169, -0.999813, -0.00860033,
+	    0, 0, 0, 1;
+    
+    Td2u = Tu2d.inverse(); 
+    Tc2u = Tu2c.inverse();
+    cout<<"Td2u * Tc2u.inverse(): "<<endl;
+    cout << Td2u * Tc2u.inverse()<<endl; 
+
+    cout <<"Tc2u * Td2u.inverse()"<<endl
+	<< Tc2u * Td2u.inverse()<<endl;
+
+    // cout<<"Tc2u.inverse() * Td2u: "<<endl;
+    // cout << Tc2u.inverse() * Td2u<<endl; 
+
+    // cout <<"Td2u.inverse() * Tc2u"<<endl
+	// << Td2u.inverse() * Tc2u<<endl;
+
+    cout <<"Tc2u.inverse(): "<<endl<<Tc2u.inverse() <<endl;
+
+    cout <<"Tc2u: "<<endl<<Tc2u <<endl;
+
+
+    cout <<"Td2c: "<<endl
+	<<Td2c<<endl;
+    
+    cout <<"Td2c.inverse(): "<<endl
+	<<Td2c.inverse()<<endl;
+
+    Eigen::Matrix4f Tc2new; 
+    Tc2new<< 1, 0, 0, 0.1,
+	     0, 1, 0, 0,
+	     0, 0, 1, 0,
+	     0, 0, 0, 1;
+    
+    cout<<"Tu2c * Tc2new: "<<endl
+	<<Tu2c*Tc2new<<endl;
+
+
   return 0;
 }
 
