@@ -27,3 +27,6 @@ message(STATUS "Ceres: ${CERES_INCLUDE_DIRS} CERES_LIBRARIES: ${CERES_LIBRARIES}
 link_libraries(${CERES_LIBRARIES})
 # link_libraries("/home/davidz/work/3rdlib/ceres-solver/ceres-bin/lib/libceres.a")
 add_executable(test_ceres src/projection_quat.cpp src/test_projection.cpp)
+
+
+add_executable(test_audo_diff src/test_auto_diff.cpp)
