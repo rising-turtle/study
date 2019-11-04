@@ -21,9 +21,19 @@ endif(COMMAND cmake_policy)
 find_package(Ceres REQUIRED)
 # set(CERES_INCLUDE_DIRS "/home/davidz/work/3rdlib/ceres-solver/include")
 include_directories(${CERES_INCLUDE_DIRS} "/usr/include/eigen3" "./src")
-
 message(STATUS "Ceres: ${CERES_INCLUDE_DIRS} CERES_LIBRARIES: ${CERES_LIBRARIES}" )
 
-link_libraries(${CERES_LIBRARIES})
+# find_package(Sophus REQUIRED)
+# message(STATUS "Sophus_INCLUDE_DIR: ${Sophus_INCLUDE_DIR}")
+# include_directories(${Sophus_INCLUDE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
+# link_libraries(${CERES_LIBRARIES})
 # link_libraries("/home/davidz/work/3rdlib/ceres-solver/ceres-bin/lib/libceres.a")
 add_executable(test_ceres src/projection_quat.cpp src/test_projection.cpp)
+target_link_libraries(test_ceres ${CERES_LIBRARIES})
+
+
+add_executable(test_jin src/test_jin.cpp)
+target_link_libraries(test_jin ${CERES_LIBRARIES})
+
