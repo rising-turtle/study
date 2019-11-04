@@ -33,7 +33,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 add_executable(test_ceres src/projection_quat.cpp src/test_projection.cpp)
 target_link_libraries(test_ceres ${CERES_LIBRARIES})
 
-
 add_executable(test_jin src/test_jin.cpp)
 target_link_libraries(test_jin ${CERES_LIBRARIES})
 
+add_executable(test_audo_diff src/test_auto_diff.cpp)
+target_link_libraries(test_audo_diff ${CERES_LIBRARIES})
