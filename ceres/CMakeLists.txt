@@ -38,3 +38,6 @@ target_link_libraries(test_jin ${CERES_LIBRARIES})
 
 add_executable(test_audo_diff src/test_auto_diff.cpp)
 target_link_libraries(test_audo_diff ${CERES_LIBRARIES})
+
+add_executable(test_audo_hand_eye src/testAuto.cpp)
+target_link_libraries(test_audo_hand_eye ${CERES_LIBRARIES})
