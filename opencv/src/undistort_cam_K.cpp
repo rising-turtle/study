@@ -67,13 +67,29 @@ void undist_tum_vio(int argc, char* argv[])
     DistCoef.at<float>(3) = -1.4032145e-5; // 4.78701072e-6;  // fSettings["Camera.p2"];
     DistCoef.at<float>(4) = 0.;// -0.0104085; //k3;
     
+   //  float dist_data[5] = {0.320760, -0.864822, 0, 0, 0.589437}; 
+    float dist_data[5] = {0} ;// 0.320760, -0.864822, 0, 0, 0.589437}; 
+
+    cv::Mat distCoeffs(1, 5, CV_32F, dist_data);  
+    float cam_matrix_data[9] = {444.277, 0, 324.055, 0, 444.764, 254.516, 0, 0, 1};  
+    cv::Mat cameraMatrix(3, 3, CV_32F, cam_matrix_data); 
+    
+    K = cameraMatrix; 
+    DistCoef = distCoeffs; 
+
+
     // cv::Mat newK = cv::Mat::eye(3,3,CV_32F); 
     cv::Mat newK; 
-    cv::Size image_size(512, 512);
+    // cv::Size image_size(512, 512);
+    // cv::Size image_size(480, 320); // cv::Size(width, height)
+    cv::Size image_size(640, 480); // cv::Size(width, height)
+
     printMat<float>(K, "oldK");
 
     // adjust camera matrix according to the scale parameters alpha \in [0, 1] 
-    cv::Mat optK = cv::getOptimalNewCameraMatrix(K, DistCoef, image_size, 0.5, image_size, 0, false); 
+   // cv::Mat optK = cv::getOptimalNewCameraMatrix(K, DistCoef, image_size, 0., image_size, 0, false); 
+    cv::Mat optK = cv::getOptimalNewCameraMatrix(K, DistCoef, image_size, 0); 
+
 
    //  cv::initUndistortRectifyMap(K, DistCoef,
    //                           cv::Mat(), K, image_size,
@@ -88,9 +104,11 @@ void undist_tum_vio(int argc, char* argv[])
     cv::undistort(img0, img2, K, DistCoef); // default means K, the new image is based on K only
     
     cv::imshow("undistorted img default", img2); 
-    cv::waitKey(0); 
+    cv::moveWindow("undistorted img default", 40, 40); 
+//    cv::waitKey(0); 
 
     cv::imshow("undistorted img using optK", img1); 
+    cv::moveWindow("undistorted img using optK", 40 + 640 + 100, 40); 
     cv::waitKey(0); 
     
     return ; 
