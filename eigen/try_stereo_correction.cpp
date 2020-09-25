@@ -120,17 +120,25 @@ int main()
       // epipolar error
       Vector3d np0(point0.x(), point0.y(), 1.);
       Vector3d np1(point1.x(), point1.y(), 1.);
+      Eigen::Matrix3d Pk = Eigen::Matrix3d::Identity();
+      Pk(2,2) = 0;
       double fe = np0.transpose() * G * np1;
-      double de1 = np1.transpose() * Gt * G * np1; double de2 = (np0.transpose() * G * Gt * np0);
-      double de = de1 + de2;
-      Vector3d dnp0 = fe * G * np1;
-      Vector3d dnp1 = fe * Gt * np0;
-
+      // double de1 = np1.transpose() * Gt * G * np1; double de2 = (np0.transpose() * G * Gt * np0);
+      // double de = de1 + de2;
+      Vector3d ve1 =  Pk*Gt*np0;
+      Vector3d ve2 =  Pk*G*np1;
+      double de = ve1.squaredNorm() + ve2.squaredNorm();
+      // cout<<"Pk: "<<endl<<Pk<<endl;
+      Vector3d dnp0 = fe * Pk * G * np1;
+      Vector3d dnp1 = fe * Pk * Gt * np0;
+      // cout<<" dnp0: "<<dnp0.transpose()/de<<" dnp1: "<<dnp1.transpose()/de<<endl;
       Vector3d new_np0 = np0 - dnp0/de;
       Vector3d new_np1 = np1 - dnp1/de;
       cout <<"fe: "<<fe<<endl;
       double new_fe = new_np0.transpose() * G * new_np1;
       cout <<"new fe: "<<new_fe<<endl;
+      cout <<"old_np0: "<<np0.transpose()<<" new_np0: "<<new_np0.transpose()<<endl;
+      cout <<"old_np1: "<<np1.transpose()<<" new_np1: "<<new_np1.transpose()<<endl;
 
       Vector2d new_point0(new_np0.x(), new_np0.y());
       Vector2d new_point1(new_np1.x(), new_np1.y());
